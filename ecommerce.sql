@@ -1,3 +1,5 @@
+CREATE DATABASE  IF NOT EXISTS `ecommerce` /*!40100 DEFAULT CHARACTER SET latin1 */;
+USE `ecommerce`;
 -- MySQL dump 10.13  Distrib 5.7.12, for osx10.9 (x86_64)
 --
 -- Host: 127.0.0.1    Database: ecommerce
@@ -14,31 +16,6 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-
---
--- Table structure for table `Posts`
---
-
-DROP TABLE IF EXISTS `Posts`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `Posts` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `text` text,
-  `created_at` datetime DEFAULT NULL,
-  `updated_at` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `Posts`
---
-
-LOCK TABLES `Posts` WRITE;
-/*!40000 ALTER TABLE `Posts` DISABLE KEYS */;
-/*!40000 ALTER TABLE `Posts` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `addresses`
@@ -103,11 +80,9 @@ DROP TABLE IF EXISTS `categories`;
 CREATE TABLE `categories` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) DEFAULT NULL,
-  `parent_id` int(11) NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `fk_categories_categories1_idx` (`parent_id`),
-  CONSTRAINT `fk_categories_categories1` FOREIGN KEY (`parent_id`) REFERENCES `ajaxpost`.`categories` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `parent_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -116,6 +91,7 @@ CREATE TABLE `categories` (
 
 LOCK TABLES `categories` WRITE;
 /*!40000 ALTER TABLE `categories` DISABLE KEYS */;
+INSERT INTO `categories` VALUES (1,'Electronics',NULL),(2,'Food',NULL),(3,'Furniture',NULL),(4,'Instructors',NULL),(5,'Computer',1),(6,'Presentation',1),(7,'Office',3),(8,'Home',3),(9,'Snacks',2),(10,'Fruit',2),(11,'Fridge',2),(12,'Intern',4),(13,'Lead',4);
 /*!40000 ALTER TABLE `categories` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -245,4 +221,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-09-28  8:35:48
+-- Dump completed on 2016-09-28 13:00:36

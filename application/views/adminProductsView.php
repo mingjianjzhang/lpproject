@@ -17,6 +17,8 @@ $this->load->view("partials/adminNav");
 			<a class="btn btn-default btn-primary pull-right" data-toggle="modal" data-target="#editAddProductModal"> Add new product </a>
 		</div>
 	</div>
+
+
 	<div class="row">
 		<table class="table">
 			<tr>
@@ -91,6 +93,8 @@ $this->load->view("partials/adminNav");
 					</div>
 	
 				<div class="modal-body">
+					<?php var_dump($categories) ?>
+					<form action="" method="POST">
 					<div class="form-group">
 						<label for="name">Name</label>
 						<input class="form-control" type="text" name="name" id="name">
@@ -100,15 +104,18 @@ $this->load->view("partials/adminNav");
 						<textarea class="form-control" name="description" id="description">Description</textarea>
 					</div>
 					<div class="form-group">
-						<label for="category"> Categories </label>
-						<select name="category" id="category" class="form-control">
-							  <option>Electronics</option>
-							  <option>Food</option>
-							  <option>Furniture</option>
-							  <option>Instructors</option>
+						<p> Categories </p>
+						<select name="category" id="adminCategorySelect">
+  							<option class="l1" value="1">Option 1</option>
+  							<option class="l2">Suboption 1</option>
+  							<option class="l2">Suboption 2</option>
+  							<option class="l2">Suboption 3</option>
+  							<option class="l1">Option 2</option>
 						</select>
 
 					</div>
+					<button type="submit" class="btn btn-primary">Submit</button>
+					</form>
 					<div class="form-group">
 						<label for="newCategory">Add New Category</label>
 						<input class="form-control" type="text" name="newCategory" id="newCategory">

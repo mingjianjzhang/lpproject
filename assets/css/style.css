@@ -47,3 +47,11 @@
 	background-image: url("../img/background.jpg");
 	background-size:cover;
 }
+
+#adminCategorySelect {
+	display: block;
+	width: 300px;
+}
+.l2 {
+	padding-left: 1em;
+}

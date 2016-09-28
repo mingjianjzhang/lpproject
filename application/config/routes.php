@@ -53,6 +53,7 @@ $route['default_controller'] = 'welcome';
 $route['store'] = 'UserProducts';
 $route['cart'] = 'UserOrders';
 $route['product'] = 'UserProducts/viewProduct';
+$route['dashboard'] = 'welcome/adminDashboard';
 $route['dashboard/products'] = 'AdminProducts';
 $route['dashboard/orders'] = 'AdminOrders';
 $route['dashboard/orders/show/(:num)'] = 'AdminOrders/showOrder/$1'; 
