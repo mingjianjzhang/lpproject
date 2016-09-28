@@ -5,6 +5,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <html>
 <head>
 	<meta charset="UTF-8"/>
+	<title>BootCamp Supply</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title></title>
 	<!-- Jquery Theme -->

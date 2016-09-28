@@ -21,6 +21,7 @@ class Welcome extends CI_Controller {
 	public function index()
 	{
 		$this->load->view('index');
+<<<<<<< HEAD
 	}
 	// Link to full category store
 	public function store() {
@@ -33,5 +34,7 @@ class Welcome extends CI_Controller {
 
 	public function product() {
 		$this->load->view('showProduct');
+=======
+>>>>>>> storeFront
 	}
 }
