@@ -2,7 +2,7 @@ CREATE DATABASE  IF NOT EXISTS `ecommerce` /*!40100 DEFAULT CHARACTER SET latin1
 USE `ecommerce`;
 -- MySQL dump 10.13  Distrib 5.7.12, for osx10.9 (x86_64)
 --
--- Host: localhost    Database: ecommerce
+-- Host: 127.0.0.1    Database: ecommerce
 -- ------------------------------------------------------
 -- Server version	5.5.42
 
@@ -94,6 +94,34 @@ INSERT INTO `categories` VALUES (1,'Electronics',NULL),(2,'Food',NULL),(3,'Furni
 UNLOCK TABLES;
 
 --
+-- Table structure for table `images`
+--
+
+DROP TABLE IF EXISTS `images`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `images` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `product_id` int(11) DEFAULT NULL,
+  `src` varchar(255) DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  `is_main` tinyint(4) DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `images`
+--
+
+LOCK TABLES `images` WRITE;
+/*!40000 ALTER TABLE `images` DISABLE KEYS */;
+INSERT INTO `images` VALUES (1,13,'sunChips.jpg',NULL,NULL,1),(2,14,'cheez-It.jpg',NULL,NULL,1),(3,15,'lg-monitor.jpg',NULL,NULL,1),(4,16,'ikea-lamp.jpg',NULL,NULL,1);
+/*!40000 ALTER TABLE `images` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `orders`
 --
 
@@ -152,8 +180,7 @@ DROP TABLE IF EXISTS `products`;
 CREATE TABLE `products` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) DEFAULT NULL,
-  `price` int(11) DEFAULT NULL,
-  `img` varchar(255) DEFAULT NULL,
+  `price` decimal(6,2) DEFAULT NULL,
   `inventory` int(11) DEFAULT NULL,
   `description` text,
   `is_personal` tinyint(4) DEFAULT NULL,
@@ -168,7 +195,7 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES (13,'Sun Chips',2,'sunChips.jpg',20,'Single serving bag of Sun chips in assorted flavors. Add a little bit of sun for those vitamin d deficient coders. ',NULL,2),(14,'Cheez-Its',2,'cheez-it.jpg',20,'Single Serving of cheese snacks. Perfect for the 400 lb hacker that needs a break from hacking the DNC. ',NULL,2),(15,'LG Monitor',175,'lg-monitor.jpg',50,'Wide screen computer monitor. Slightly used and low glare perfect for 90 hours of coding, straight no breaks, so get back to work.',NULL,1),(16,'Tall Paper Lamp',40,'ikea-lamp.jpg',3,'Tall color changing lamp perfect to set the mood or convince any coder to stay at their desk and write more code. Its soothing color changing bulb will make any person believe the outside world doesn’t exist. \nTall color changing lamp perfect to set the mood or convince any coder to stay at their desk and write more code. Its soothing color changing bulb will make any person believe the outside world doesn’t exist. \n',NULL,3);
+INSERT INTO `products` VALUES (13,'Sun Chips',2.00,20,'Single serving bag of Sun chips in assorted flavors. Add a little bit of sun for those vitamin d deficient coders. ',NULL,2),(14,'Cheez-Its',2.00,20,'Single Serving of cheese snacks. Perfect for the 400 lb hacker that needs a break from hacking the DNC. ',NULL,2),(15,'LG Monitor',99.00,50,'Wide screen computer monitor. Slightly used and low glare perfect for 90 hours of coding, straight no breaks, so get back to work.',NULL,1),(16,'Tall Paper Lamp',40.00,3,'Tall color changing lamp perfect to set the mood or convince any coder to stay at their desk and write more code. Its soothing color changing bulb will make any person believe the outside world doesn’t exist. \nTall color changing lamp perfect to set the mood or convince any coder to stay at their desk and write more code. Its soothing color changing bulb will make any person believe the outside world doesn’t exist. \n',NULL,3);
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -212,4 +239,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-09-28 14:31:00
+-- Dump completed on 2016-09-28 15:56:36
