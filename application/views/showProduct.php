@@ -5,11 +5,11 @@ $this->load->view('partials/userHeader');
 ?>
 <div class="container">
 	<div class="col-md-12">
-		<a class="outlined" href="/"><span class="glyphicon glyphicon-arrow-left"></span> Go Back</a>
+		<a class="outlined" href="/store"><span class="glyphicon glyphicon-arrow-left"></span> Go Back</a>
 		<div class="row">
 			<h2><?= $info['name'] ?></h2>
 			<div class="col-md-5">
-				<img class="img-rounded col-md-12"  src="/assets/img/placeholder.jpg">
+				<img class="img-rounded col-md-12"  src="/assets/img/products/<?= $info['img']?>">
 				<div class="row">
 					<ul class="inline-list">
 						<li><a href="#"><img src="/assets/img/placeholder-icon.jpg"></a></li>
@@ -34,7 +34,7 @@ $this->load->view('partials/userHeader');
 							<?php } ?>
 						</ul>
 					</div>
-					<form action="" method=post><input type="submit" value="Buy" class="btn btn-default"></form>
+					<form action="/cart" method="post"><input type="submit" value="Buy" class="btn btn-default"></form>
 				</div>
 			</div>
 		</div>

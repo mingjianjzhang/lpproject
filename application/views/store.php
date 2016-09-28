@@ -29,35 +29,12 @@ $this->load->view('partials/userHeader');
 		<?php } ?>
 	</div>
 	<div class="col-md-6 col-xs-12 col-md-offset-1 outlined">
+		<?php foreach ($products as $product) { ?>
 		<div class="col-xs-6 col-md-4">
-			<a href="#" class="thumbnail">
-				<img src="assets/img/placeholder-thumb.jpg" alt="placeholder">
+			<a href="/product/<?= $product['id'] ?>" class="thumbnail">
+				<img src="assets/img/products/<?= $product['img'] ?>" alt="placeholder">
 			</a>
 		</div>
-		<div class="col-xs-6 col-md-4">
-			<a href="#" class="thumbnail">
-				<img src="assets/img/placeholder-thumb.jpg" alt="placeholder">
-			</a>
-		</div>
-		<div class="col-xs-6 col-md-4">
-			<a href="#" class="thumbnail">
-				<img src="assets/img/placeholder-thumb.jpg" alt="placeholder">
-			</a>
-		</div>
-		<div class="col-xs-6 col-md-4">
-			<a href="#" class="thumbnail">
-				<img src="assets/img/placeholder-thumb.jpg" alt="placeholder">
-			</a>
-		</div>
-		<div class="col-xs-6 col-md-4">
-			<a href="#" class="thumbnail">
-				<img src="assets/img/placeholder-thumb.jpg" alt="placeholder">
-			</a>
-		</div>
-		<div class="col-xs-6 col-md-4">
-			<a href="#" class="thumbnail">
-				<img src="assets/img/placeholder-thumb.jpg" alt="placeholder">
-			</a>
-		</div>
+		<?php } ?>
 	</div>
 </div>
