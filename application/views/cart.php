@@ -4,7 +4,6 @@ $this->load->view("partials/head");
 $this->load->view('partials/userHeader');
 ?>
 
-<!-- load the user header partial here -->
 <body>
 
 	<table class="table">
