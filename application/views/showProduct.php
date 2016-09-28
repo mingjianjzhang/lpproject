@@ -7,7 +7,7 @@ $this->load->view('partials/userHeader');
 	<div class="col-md-12">
 		<a class="outlined" href="/"><span class="glyphicon glyphicon-arrow-left"></span> Go Back</a>
 		<div class="row">
-			<h2>Black Belt for Staff</h2>
+			<h2><?= $info['name'] ?></h2>
 			<div class="col-md-5">
 				<img class="img-rounded col-md-12"  src="/assets/img/placeholder.jpg">
 				<div class="row">
@@ -20,8 +20,8 @@ $this->load->view('partials/userHeader');
 				</div>
 			</div>
 			<div class="col-md-7">
-				<h3>Product Description</h3>
-				<p>Description description description description description  description description description description  description description description description  description description description description  description description description description  description description description description  description description description description  description description description description  description description description description  description description description description </p>
+				<h3>Product Description:</h3>
+				<p><?= $info['description'] ?></p>
 				<div class="btn-group" role="group" aria-label="...">
 					<div class="btn-group" role="group">
 						<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -29,10 +29,9 @@ $this->load->view('partials/userHeader');
 							<span class="caret"></span>
 						</button>
 						<ul class="dropdown-menu">
-							<!-- need to set number to go from 1 to limit based on an inventory sql -->
-							<li><a href="#">1</a></li> 
-							<li><a href="#">2</a></li>
-							<li><a href="#">3</a></li>
+							<?php for ($i=1; $i<=$info['inventory']; $i++) { ?>
+							<li><a href="#"><?= $i ?> ($<?= $i * $info['price'] ?>)</a></li> 
+							<?php } ?>
 						</ul>
 					</div>
 					<form action="" method=post><input type="submit" value="Buy" class="btn btn-default"></form>

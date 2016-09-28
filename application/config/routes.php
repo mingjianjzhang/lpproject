@@ -52,7 +52,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'welcome';
 $route['store'] = 'UserProducts';
 $route['cart'] = 'UserOrders';
-$route['product'] = 'UserProducts/viewProduct';
+$route['product/(:num)'] = 'UserProducts/viewProduct/$1';
 $route['dashboard'] = 'welcome/adminDashboard';
 $route['dashboard/products'] = 'AdminProducts';
 $route['dashboard/orders'] = 'AdminOrders';
