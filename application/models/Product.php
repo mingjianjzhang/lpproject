@@ -2,9 +2,9 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Product extends CI_Model {
-	public function getAllItems() // for store page
+	public function getAll() // for store page
 	{
-		
+		return $this->db->query("SELECT id, img FROM products")->result_array();
 	}
 	public function getItemDetails($id) // for product details page
 	{
