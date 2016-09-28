@@ -5,15 +5,7 @@ $this->load->view("partials/adminNav");
 ?>
 
 <div class="container">
-<?php echo form_open_multipart('upload/do_upload');?>
 
-<input type="file" name="userfile" size="20" />
-
-<br /><br />
-
-<input type="submit" value="upload" />
-
-</form>
 
 <?php var_dump($categories) ?>
 	<div class="row">
@@ -105,7 +97,9 @@ $this->load->view("partials/adminNav");
 	
 				<div class="modal-body">
 
-					<form action="" method="POST">
+				<?php echo form_open_multipart('AdminProducts/uploadImage');?>
+
+						<input type="file" name="userfile" size="20" />
 					<div class="form-group">
 						<label for="name">Name</label>
 						<input class="form-control" type="text" name="name" id="name">
@@ -114,16 +108,39 @@ $this->load->view("partials/adminNav");
 						<label for="description">Description</label>
 						<textarea class="form-control" name="description" id="description">Description</textarea>
 					</div>
+					<div class="row">
+						<div class="col-sm-3">
+							<div class="form-group">
+							<label for="price"> Price </label>
+							<input type="text" id="price" name="price" class="form-control">
+							</div>
+						</div>
+						<div class="col-sm-3 pull-right">
+							<div class="form-group">
+							<label for="inventory"> Inventory </label>
+							<input type="text" id="inventory" name="inventory" class="form-control">
+							</div>
+						</div>
+						<div class="col-sm-6">
+							<div class="form-group">
+								<label for="adminCategorySelect">
+								Categories
+								</label>
+								<select name="category" id="adminCategorySelect">
+<?php foreach ($categories as $parent) { ?>
+  									<option class="l1" value=<?= $parent['id']?>><?= $parent['category_name'] ?></option>
+	<?php foreach($parent['children'] as $child) { ?>
+  									<option class="l2" value=<?= $child['id'] ?>><?= $child['name'] ?></option>
+  	<?php } ?>
+<?php } ?>
+								</select>
+
+							</div>
+						</div>
+					</div>
 					<div class="form-group">
 						<p> Categories </p>
-						<select name="category" id="adminCategorySelect">
-							<?php foreach ($categories as $parent) { ?>
-  							<option class="l1" value="<?= $parent['id']?>"><?= $parent['category_name'] ?></option>
-  								<?php foreach($parent['children'] as $child) { ?>
-  							<option class="l2" value="<?= $child['id'] ?>"><?= $child['name'] ?></option>
-  								<?php } ?>
-  							<?php } ?>
-						</select>
+						
 
 					</div>
 					<button type="submit" class="btn btn-primary">Submit</button>
@@ -132,10 +149,7 @@ $this->load->view("partials/adminNav");
 						<label for="newCategory">Add New Category</label>
 						<input class="form-control" type="text" name="newCategory" id="newCategory">
 					</div> -->
-					<div>
-						<h5> Images </h5>
-						<a class="btn btn-default">Upload</a>
-					</div>
+				
 					<div>
 						<table id="adminProductImageUpload" class="table">
 							<tr>
