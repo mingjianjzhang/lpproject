@@ -10,7 +10,9 @@ class UserProducts extends CI_Controller {
 	}
 
 	public function viewProduct() {
-		$this->load->view('showProduct');
+		$this->load->model('Product');
+		$data = array('info' => $this->Product->getItemDetails($id)); // need to set $id to product asked for
+		$this->load->view('showProduct', $data);
 	}
 
 
