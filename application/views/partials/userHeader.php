@@ -34,7 +34,7 @@
 					</li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="#">Shopping Cart (#) <span class="glyphicon glyphicon-shopping-cart"></span></a></li>
+					<li><a href="/goToCart">Shopping Cart (#) <span class="glyphicon glyphicon-shopping-cart"></span></a></li>
 				</ul>
 			</div><!-- /.navbar-collapse -->
 		</div><!-- /.container-fluid -->

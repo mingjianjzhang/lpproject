@@ -2,6 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 $this->load->view("partials/head");
 $this->load->view('partials/userHeader');
+// var_dump($this->session->cart);
 ?>
 <body>
 	<div class="container">
@@ -13,25 +14,17 @@ $this->load->view('partials/userHeader');
 					<th>Quantity</th>
 					<th>Total</th>
 				</tr>
+				<?php foreach ($this->session->cart as $item) { ?>
 				<tr>
-					<td>Belt</td>
-					<td>$1</td> 
-					<td>5 <a href="">Update</a><img src="/assets/img/trash.png" width="25"></td>
-					<td>$5</td>
+					<td><?= $item['name'] ?></td>
+					<td>$<?= $item['price'] ?></td> 
+					<td><?= $item['quantity'] ?> <a href="">Update</a><img src="/assets/img/trash.png" width="25"></td>
+					<td>$<?= $item['total'] ?></td>
 				</tr>
-				<tr>
-					<td>Belt</td>
-					<td>$1</td> 
-					<td>5 <a href="">Update</a><img src="/assets/img/trash.png" width="25"></td>
-					<td>$5</td>
-				</tr>
-				<tr>
-					<td>Belt</td>
-					<td>$1</td> 
-					<td>5 <a href="">Update</a><img src="/assets/img/trash.png" width="25"></td>
-					<td>$5</td>
-				</tr>
+				<?php } ?>
+
 			</table>
+			<a href="empty">Empty Cart</a>
 			<p>Total:</p>
 			<button class="btn btn-success">Continue Shopping</button>
 		</div>
