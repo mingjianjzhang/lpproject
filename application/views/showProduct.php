@@ -1,9 +1,9 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 $this->load->view("partials/head")
+$this->load->view('partials/userHeader');
 ?>
 
-<!-- load the user header partial here -->
 <body>
 	<a href="/">Go Back</a>
 	<h2>Black Belt for Staff</h2>

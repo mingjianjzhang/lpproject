@@ -7,7 +7,7 @@ class Order extends CI_Model {
 		// use session data
 	}
 	public function recordInfo() {
-		// add in user info
+		$sql = "INSERT INTO addresses  (street, city, state, zip)  VALUES ()";
 	}
 =======
 
