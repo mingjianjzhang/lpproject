@@ -2,7 +2,6 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 $this->load->view("partials/head");
 $this->load->view('partials/userHeader');
-var_dump($info);
 ?>
 <div class="container">
 	<div class="col-md-12">
