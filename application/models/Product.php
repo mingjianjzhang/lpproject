@@ -4,14 +4,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Product extends CI_Model {
 	public function getAll() 
 	{
-		return $this->db->query("SELECT id, img FROM products")->result_array();
+		return $this->db->query("SELECT products.id, images.src AS img FROM products JOIN images ON products.id=images.product_id")->result_array();
 	}
 	public function getItemDetails($id)
 	{
-		$sql="SELECT name, price, img, description, inventory FROM products WHERE id = $id";
+		$sql="SELECT name, price, images.src AS img, description, inventory FROM products JOIN images ON products.id=images.product_id WHERE products.id = $id";
 		return $this->db->query($sql)->row_array();
 	}
-	public function getSimilarItems() 
+	public function getSimilarItems($id) 
 	{
 		
 	}
@@ -28,8 +28,5 @@ class Product extends CI_Model {
 		}
 		return $results;
 	}
-
-
-
 
 }
