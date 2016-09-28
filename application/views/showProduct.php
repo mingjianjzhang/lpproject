@@ -40,30 +40,12 @@ $this->load->view('partials/userHeader');
 		</div>
 		<div class="row">
 			<h3>Similar Items</h3>
-			<div class="col-md-1">
-				<a href=""><img src="/assets/img/imgPlaceholder.png"></a>
-				<p>Description</p>
-			</div>
-			<div class="col-md-1">
-				<a href=""><img src="/assets/img/imgPlaceholder.png"></a>
-				<p>Description</p>
-			</div>
-			<div class="col-md-1">
-				<a href=""><img src="/assets/img/imgPlaceholder.png"></a>
-				<p>Description</p>
-			</div>
-			<div class="col-md-1">
-				<a href=""><img src="/assets/img/imgPlaceholder.png"></a>
-				<p>Description</p>
-			</div>
-			<div class="col-md-1">
-				<a href=""><img src="/assets/img/imgPlaceholder.png"></a>
-				<p>Description</p>
-			</div>
-			<div class="col-md-1">
-				<a href=""><img src="/assets/img/imgPlaceholder.png"></a>
-				<p>Description</p>
-			</div>
+			<? foreach ($similar as $similarThing) { ?>
+				<div class="col-md-1">
+					<a href="/product/<?= $similarThing['id'] ?>"><img src="/assets/img/products/<?= $similarThing['img'] ?>"></a>
+					<p><?= $similarThing['name'] ?>, $<?= $similarThing['price'] ?></p>
+				</div>
+			<?php } ?>
 		</div>
 	</div>
 </div>

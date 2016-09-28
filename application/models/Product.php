@@ -13,7 +13,8 @@ class Product extends CI_Model {
 	}
 	public function getSimilarItems($id) 
 	{
-		
+		$cat = $this->db->query("SELECT category_id FROM Products WHERE id = $id")->row_array();
+		return $this->db->query("SELECT products.id id, name, price, images.src AS img FROM products JOIN images ON products.id=images.product_id WHERE category_id = {$cat['category_id']} AND products.id != $id")->result_array();
 	}
 
 	public function addProduct($productInfo) {
