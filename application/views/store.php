@@ -1,5 +1,8 @@
-<?php $this->load->view('partials/head'); 
-$this->load->view('partials/userHeader')?>
+<?php
+	defined('BASEPATH') OR exit('No direct script access allowed');
+	$this->load->view('partials/head'); 
+	$this->load->view('partials/userHeader');
+?>
 
 <div class="container">
 	<div class="col-md-3 col-md-offset-1 outlined">
