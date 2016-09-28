@@ -10,12 +10,20 @@ $this->load->view('partials/userHeader')?>
 			<button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
 		</form>
 		<h3>Categories</h3>
-		<ul class="list-group">
-			<li class="list-group-item"><a href="#">Furniture<span class="pull-right">#</span></a></li>
-			<li class="list-group-item"><a href="#">Electronics<span class="pull-right">#</span></a></li>
-			<li class="list-group-item"><a href="#">Snacks/Food<span class="pull-right">#</span></a></li>
-			<li class="list-group-item"><a href="#">Instructors<span class="pull-right">#</span></a></li>
-		</ul>
+		<?php foreach ($categories as $category) { ?>
+		<div class="dropdown">
+			<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+				<?= $category['category_name'] ?>
+				<span class="caret"></span>
+			</button>
+			<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+				<?php foreach ($category['children'] as $name) {?>
+				<li><a href="#"><?=  $name['name'] ?></a></li>
+				<?php } ?>
+				<li><a href="#">All <?=  $category['category_name'] ?></a></li>
+			</ul>
+		</div>
+		<?php } ?>
 	</div>
 	<div class="col-md-6 col-xs-12 col-md-offset-1 outlined">
 		<div class="col-xs-6 col-md-4">
