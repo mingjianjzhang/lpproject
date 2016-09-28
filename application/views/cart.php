@@ -132,11 +132,10 @@ $this->load->view('partials/userHeader');
 					</select>
 				</div>
 			</div>
+		</form>
+		<div class="col-md-10 clear-bottom clear-top">
+			<button class="btn btn-success pull-right">Pay</button>
 		</div>
-	</form>
-	<div class="col-md-10 clear-bottom clear-top">
-		<button class="btn btn-success pull-right">Pay</button>
 	</div>
-</div>
 </body>
 </html>
