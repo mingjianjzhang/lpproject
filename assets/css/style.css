@@ -21,6 +21,11 @@
 #adminProductImageUpload p {
 	margin-top: 10px;
 }
+.container {
+	background: white;
+	padding:20px 0px;
+	border-radius:20px;
+}
 .outlined {
 	border:1px solid silver;
 	border-radius:10px;
@@ -32,4 +37,13 @@
 }
 .clear-top {
 	margin-top: 15px;
+}
+.inline-list li {
+	display: inline-block;
+	text-decoration: none;
+	margin:10px;
+}
+.fullBackground {
+	background-image: url("../img/background.jpg");
+	background-size:cover;
 }
