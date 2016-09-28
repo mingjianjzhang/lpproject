@@ -24,17 +24,24 @@ class Welcome extends CI_Controller {
 	{
 
 		$this->load->view('adminProductsView');
+
+	public function index()
+	{
+		$this->load->view('index');
 	}
 	// Link to full category store
-	public function store() {
+	public function store()
+	{
 		$this->load->view('store');
 	}
 
-	public function cart() {
+	public function cart()
+	{
 		$this->load->view('cart');
 	}
 
-	public function product() {
+	public function product()
+	{
 		$this->load->view('showProduct');
 	}
 }
