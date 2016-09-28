@@ -12,6 +12,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/hot-sneaks/jquery-ui.css">
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	
 	<!-- Personal CSS -->
 	<link rel="stylesheet" href="/assets/css/style.css">
 
@@ -30,6 +31,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 	<script>
-		
+		$(document).ready(function() {
+			// $('#editProductModal').modal();	
+		})
 	</script>
 </head>

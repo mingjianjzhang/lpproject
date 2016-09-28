@@ -1,0 +1,22 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+#adminProductsPages li{
+	display: inline-block;
+}
+
+
+.pages li {
+	border-right: 1px solid black;
+
+}
+.pages li:last-child {
+	border-right: none;
+}
+
+
+#adminProductImageUpload p {
+	margin-top: 10px;
+}
