@@ -51,7 +51,6 @@ $this->load->view('partials/userHeader');
 		<input type="text" class="form-control" placeholder="Address" aria-describedby="basic-addon1">
 	</div>
 	<div class="input-group clear-bottom">
-	<div class="input-group">
 		<span class="input-group-addon" id="basic-addon1">City:</span>
 		<input type="text" class="form-control" placeholder="City" aria-describedby="basic-addon1">
 	</div>
@@ -82,7 +81,6 @@ $this->load->view('partials/userHeader');
 		<input type="text" class="form-control" placeholder="Address" aria-describedby="basic-addon1">
 	</div>
 	<div class="input-group clear-bottom">
-	<div class="input-group">
 		<span class="input-group-addon" id="basic-addon1">City:</span>
 		<input type="text" class="form-control" placeholder="City" aria-describedby="basic-addon1">
 	</div>
