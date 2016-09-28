@@ -50,7 +50,8 @@
 
 #adminCategorySelect {
 	display: block;
-	width: 300px;
+	width: 15em;
+	padding: 5px 10px;
 }
 .l2 {
 	padding-left: 1em;
