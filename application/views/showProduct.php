@@ -29,12 +29,13 @@
 								<span class="caret"></span>
 							</button>
 							<ul class="dropdown-menu">
-								<li><a href="#">1</a></li>
+							<!-- need to set number to go from 1 to limit based on an inventory sql -->
+								<li><a href="#">1</a></li> 
 								<li><a href="#">2</a></li>
 								<li><a href="#">3</a></li>
 							</ul>
 						</div>
-						<button type="button" class="btn btn-default">Buy</button>
+						<form action="" method=post><input type="submit" value="Buy" class="btn btn-default"></form>
 					</div>
 				</div>
 			</div>
