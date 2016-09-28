@@ -1,5 +1,9 @@
-<?php $this->load->view('partials/head'); 
-$this->load->view('partials/userHeader')?>
+<?php 
+defined('BASEPATH') OR exit('No direct script access allowed');
+$this->load->view('partials/head'); 
+$this->load->view('partials/userHeader');
+?>
+
 <div class="container">
 	<div class="col-md-12">
 		<div class="jumbotron" id="banner">
@@ -33,6 +37,6 @@ $this->load->view('partials/userHeader')?>
 </div>
 <script type="text/javascript">
 	
-			$(".fullBackground").css("height", $(window).height());
+	$(".fullBackground").css("height", $(window).height());
 
 </script>

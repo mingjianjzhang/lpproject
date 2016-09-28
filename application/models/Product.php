@@ -8,8 +8,8 @@ class Product extends CI_Model {
 	}
 	public function getItemDetails($id) // for product details page
 	{
-		$sql="SELECT name, price, img, description FROM products WHERE id = $id";
-		return $this->db->query($sql);
+		$sql="SELECT name, price, img, description, inventory FROM products WHERE id = $id";
+		return $this->db->query($sql)->row_array();
 	}
 	public function getSimilarItems() // for product details page
 	{
