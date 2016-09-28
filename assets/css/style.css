@@ -20,14 +20,16 @@
 
 #adminProductImageUpload p {
 	margin-top: 10px;
-
+}
 .outlined {
 	border:1px solid silver;
 	border-radius:10px;
 	padding:10px;
-<<<<<<< HEAD
 	margin-bottom: 10px;
-=======
-
->>>>>>> origin/master
+}
+.clear-bottom {
+	margin-bottom: 15px;
+}
+.clear-top {
+	margin-top: 15px;
 }
