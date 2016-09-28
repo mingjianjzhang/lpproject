@@ -5,7 +5,7 @@ $this->load->view("partials/head");
 <nav class="navbar navbar-default">
 	<div class="container">
 		<div class="navbar-header">
-			<a class="navbar-brand" href="">Dashboard</a>
+			<a class="navbar-brand" href="/dashboard">Dashboard</a>
 		</div>
 		<div class="collapse navbar-collapse">
 			<ul class="nav navbar-nav">

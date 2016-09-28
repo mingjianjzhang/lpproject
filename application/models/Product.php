@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Product extends CI_Model {
 	public function getAllItems() // for store page
 	{
-
+		
 	}
 	public function getItemDetails($id) // for product details page
 	{
@@ -14,6 +14,15 @@ class Product extends CI_Model {
 	public function getSimilarItems() // for product details page
 	{
 		// get pic name and price for items in the same category
+	}
+
+	public function getCategories() {
+		$results = array();
+		$results['parents'] = $this->db->query("select id, name as category_name FROM categories WHERE parent_id IS null")->result_array();
+		foreach ($results['parents'] as $parent) {
+			$parent['children'] = $this->db->query("SELECT name FROM categories WHERE parent_id = {$parent['id']}");
+		}
+		return $results;
 	}
 
 

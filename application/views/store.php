@@ -11,10 +11,10 @@ $this->load->view('partials/userHeader')?>
 		</form>
 		<h3>Categories</h3>
 		<ul class="list-group">
-			<li class="list-group-item">Furniture</li>
-			<li class="list-group-item">Electronics</li>
-			<li class="list-group-item">Snacks/Food</li>
-			<li class="list-group-item">Instructors</li>
+			<li class="list-group-item"><a href="#">Furniture<span class="pull-right">#</span></a></li>
+			<li class="list-group-item"><a href="#">Electronics<span class="pull-right">#</span></a></li>
+			<li class="list-group-item"><a href="#">Snacks/Food<span class="pull-right">#</span></a></li>
+			<li class="list-group-item"><a href="#">Instructors<span class="pull-right">#</span></a></li>
 		</ul>
 	</div>
 	<div class="col-md-6 col-xs-12 col-md-offset-1 outlined">
