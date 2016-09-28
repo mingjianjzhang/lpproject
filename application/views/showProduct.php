@@ -2,6 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 $this->load->view("partials/head");
 $this->load->view('partials/userHeader');
+var_dump($info);
 ?>
 <div class="container">
 	<div class="col-md-12">
@@ -24,17 +25,19 @@ $this->load->view('partials/userHeader');
 				<p><?= $info['description'] ?></p>
 				<div class="btn-group" role="group" aria-label="...">
 					<div class="btn-group" role="group">
-						<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							Select
-							<span class="caret"></span>
-						</button>
-						<ul class="dropdown-menu">
-							<?php for ($i=1; $i<=$info['inventory']; $i++) { ?>
-							<li><a href="#"><?= $i ?> ($<?= $i * $info['price'] ?>)</a></li> 
-							<?php } ?>
-						</ul>
+						<form action="/addToCart" method="post" class="form-inline">
+							<input type="hidden" name="price" value="<?= $info['price'] ?>">
+							<input type="hidden" name="name" value="<?= $info['name'] ?>">
+							<input type="hidden" name="id" value="<?= $info['id'] ?>">
+							<select class="form-control" name="quantity">
+								<?php for ($i=1; $i<=$info['inventory']; $i++) { ?>
+								<option value="<?= $i ?>"><a href="#"><?= $i ?> ($<?= $i * $info['price'] ?>)</a></option> 
+								<?php } ?>
+							</select>
+							<input type="submit" value="Buy" class="btn btn-default">
+						</form>
 					</div>
-					<form action="/cart" method="post"><input type="submit" value="Buy" class="btn btn-default"></form>
+						
 				</div>
 			</div>
 		</div>
