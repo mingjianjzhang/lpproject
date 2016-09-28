@@ -17,10 +17,35 @@ $this->load->view('partials/userHeader')?>
 			  <li class="list-group-item">Instructors</li>
 			</ul>
 	</div>
-	<div class="col-md-6 col-md-offset-1 outlined">
-		<div class="col-xs-6 col-md-3">
+	<div class="col-md-6 col-xs-12 col-md-offset-1 outlined">
+		<div class="col-xs-6 col-md-4">
 	    <a href="#" class="thumbnail">
-	      <img src="..." alt="...">
+	      <img src="assets/img/placeholder-thumb.jpg" alt="placeholder">
+	    </a>
+	  </div>
+	  <div class="col-xs-6 col-md-4">
+	    <a href="#" class="thumbnail">
+	      <img src="assets/img/placeholder-thumb.jpg" alt="placeholder">
+	    </a>
+	  </div>
+	  <div class="col-xs-6 col-md-4">
+	    <a href="#" class="thumbnail">
+	      <img src="assets/img/placeholder-thumb.jpg" alt="placeholder">
+	    </a>
+	  </div>
+	  <div class="col-xs-6 col-md-4">
+	    <a href="#" class="thumbnail">
+	      <img src="assets/img/placeholder-thumb.jpg" alt="placeholder">
+	    </a>
+	  </div>
+	  <div class="col-xs-6 col-md-4">
+	    <a href="#" class="thumbnail">
+	      <img src="assets/img/placeholder-thumb.jpg" alt="placeholder">
+	    </a>
+	  </div>
+	  <div class="col-xs-6 col-md-4">
+	    <a href="#" class="thumbnail">
+	      <img src="assets/img/placeholder-thumb.jpg" alt="placeholder">
 	    </a>
 	  </div>
 	</div>
