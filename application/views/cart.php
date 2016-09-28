@@ -1,6 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-$this->load->view("partials/head")
+$this->load->view("partials/head");
+$this->load->view('partials/userHeader');
 ?>
 
 <!-- load the user header partial here -->
