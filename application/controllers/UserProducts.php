@@ -11,7 +11,7 @@ class UserProducts extends CI_Controller {
 
 	public function viewProduct($id) {
 		$this->load->model('Product');
-		$data = array('info' => $this->Product->getItemDetails($id));
+		$data = array('info' => $this->Product->getItemDetails($id), 'similar' => $this->Product->getSimilarItems($id));
 		$this->load->view('showProduct', $data);
 	}
 
