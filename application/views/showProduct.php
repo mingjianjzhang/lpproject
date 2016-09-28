@@ -34,7 +34,7 @@ $this->load->view('partials/userHeader');
 							<?php } ?>
 						</ul>
 					</div>
-					<form action="/cart" method=post><input type="submit" value="Buy" class="btn btn-default"></form>
+					<form action="/cart" method="post"><input type="submit" value="Buy" class="btn btn-default"></form>
 				</div>
 			</div>
 		</div>
