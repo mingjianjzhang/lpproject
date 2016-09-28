@@ -1,11 +1,14 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Order extends CI_Model {
-	public function showCart() {
+class Order extends CI_Model { // for cart page
+	public function showCart()
+	{
 		// use session data
 	}
-	public function recordInfo() {
+	public function recordInfo() // for cart page
+	{
+
 		$sql = "INSERT INTO addresses  (street, city, state, zip)  VALUES ()";
 	}
 
