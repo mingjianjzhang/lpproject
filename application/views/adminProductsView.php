@@ -5,6 +5,17 @@ $this->load->view("partials/adminNav");
 ?>
 
 <div class="container">
+<?php echo form_open_multipart('upload/do_upload');?>
+
+<input type="file" name="userfile" size="20" />
+
+<br /><br />
+
+<input type="submit" value="upload" />
+
+</form>
+
+<?php var_dump($categories) ?>
 	<div class="row">
 		<div class="col-sm-6">
 			<form id="adminSearchProducts">
@@ -84,7 +95,7 @@ $this->load->view("partials/adminNav");
 				<li><a href="">6</a></li>
 				<li><a href="">7</a></li>
 			</ul>
-		<div class="modal fade" id="editAddProductModal" tabindex="-1" role="dialog">
+		<div class="modal fade" id="editAddProductModal" role="dialog">
 			<div class="modal-dialog" role="document">
 				<div class="modal-content">
 					<div class="modal-header">
@@ -93,7 +104,7 @@ $this->load->view("partials/adminNav");
 					</div>
 	
 				<div class="modal-body">
-					<?php var_dump($categories) ?>
+
 					<form action="" method="POST">
 					<div class="form-group">
 						<label for="name">Name</label>
@@ -106,20 +117,21 @@ $this->load->view("partials/adminNav");
 					<div class="form-group">
 						<p> Categories </p>
 						<select name="category" id="adminCategorySelect">
-  							<option class="l1" value="1">Option 1</option>
-  							<option class="l2">Suboption 1</option>
-  							<option class="l2">Suboption 2</option>
-  							<option class="l2">Suboption 3</option>
-  							<option class="l1">Option 2</option>
+							<?php foreach ($categories as $parent) { ?>
+  							<option class="l1" value="<?= $parent['id']?>"><?= $parent['category_name'] ?></option>
+  								<?php foreach($parent['children'] as $child) { ?>
+  							<option class="l2" value="<?= $child['id'] ?>"><?= $child['name'] ?></option>
+  								<?php } ?>
+  							<?php } ?>
 						</select>
 
 					</div>
 					<button type="submit" class="btn btn-primary">Submit</button>
 					</form>
-					<div class="form-group">
+<!-- 					<div class="form-group">
 						<label for="newCategory">Add New Category</label>
 						<input class="form-control" type="text" name="newCategory" id="newCategory">
-					</div>
+					</div> -->
 					<div>
 						<h5> Images </h5>
 						<a class="btn btn-default">Upload</a>

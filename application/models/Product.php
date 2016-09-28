@@ -13,9 +13,9 @@ class Product extends CI_Model {
 
 	public function getCategories() {
 		$results = array();
-		$results['parents'] = $this->db->query("select id, name as category_name FROM categories WHERE parent_id IS null")->result_array();
-		foreach ($results['parents'] as $parent) {
-			$parent['children'] = $this->db->query("SELECT name FROM categories WHERE parent_id = {$parent['id']}");
+		$results = $this->db->query("select id, name as category_name FROM categories WHERE parent_id IS null")->result_array();
+		for ($i = 0; $i < count($results); $i++) {
+			$results[$i]['children'] = $this->db->query("SELECT id, name FROM categories WHERE parent_id = {$results[$i]['id']}")->result_array();
 		}
 		return $results;
 	}
