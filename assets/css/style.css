@@ -1,3 +1,4 @@
+
 * {
 	margin: 0;
 	padding: 0;
@@ -19,4 +20,10 @@
 
 #adminProductImageUpload p {
 	margin-top: 10px;
+
+.outlined {
+	border:1px solid silver;
+	border-radius:10px;
+	padding:10px;
+
 }
