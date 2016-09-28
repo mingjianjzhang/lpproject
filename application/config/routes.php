@@ -54,5 +54,7 @@ $route['store'] = 'UserProducts';
 $route['cart'] = 'UserOrders';
 $route['product'] = 'UserProducts/viewProduct';
 $route['dashboard/products'] = 'AdminProducts';
+$route['dashboard/orders'] = 'AdminOrders';
+$route['dashboard/orders/show/(:num)'] = 'AdminOrders/showOrder/$1'; 
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
