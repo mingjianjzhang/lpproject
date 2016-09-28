@@ -14,7 +14,7 @@ $this->load->view("partials/adminNav");
 			</form>
 		</div>
 		<div class="col-sm-6">
-			<a class="btn btn-default btn-primary pull-right"> Add new product </a>
+			<a class="btn btn-default btn-primary pull-right" data-toggle="modal" data-target="#editAddProductModal"> Add new product </a>
 		</div>
 	</div>
 	<div class="row">
@@ -34,7 +34,7 @@ $this->load->view("partials/adminNav");
 				<td>100</td>
 				<td>10</td>
 				<td>
-					<a data-toggle="modal" data-target="#editProductModal">Edit</a>
+					<a data-toggle="modal" data-target="#editAddProductModal">Edit</a>
 					<a href="">Delete</a>
 				</td>
 			</tr>
@@ -82,7 +82,7 @@ $this->load->view("partials/adminNav");
 				<li><a href="">6</a></li>
 				<li><a href="">7</a></li>
 			</ul>
-		<div class="modal fade" id="editProductModal" tabindex="-1" role="dialog">
+		<div class="modal fade" id="editAddProductModal" tabindex="-1" role="dialog">
 			<div class="modal-dialog" role="document">
 				<div class="modal-content">
 					<div class="modal-header">
@@ -102,9 +102,10 @@ $this->load->view("partials/adminNav");
 					<div class="form-group">
 						<label for="category"> Categories </label>
 						<select name="category" id="category" class="form-control">
+							  <option>Electronics</option>
 							  <option>Food</option>
 							  <option>Furniture</option>
-							  <option>Tech</option>
+							  <option>Instructors</option>
 						</select>
 
 					</div>
