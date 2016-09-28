@@ -1,7 +1,7 @@
 <?php 
-	defined('BASEPATH') OR exit('No direct script access allowed');
-	$this->load->view('partials/head'); 
-	$this->load->view('partials/userHeader');
+defined('BASEPATH') OR exit('No direct script access allowed');
+$this->load->view('partials/head'); 
+$this->load->view('partials/userHeader');
 ?>
 
 <div class="container">
@@ -37,6 +37,6 @@
 </div>
 <script type="text/javascript">
 	
-			$(".fullBackground").css("height", $(window).height());
+	$(".fullBackground").css("height", $(window).height());
 
 </script>
