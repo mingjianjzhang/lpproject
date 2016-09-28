@@ -3,11 +3,25 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $this->load->view("partials/head");
 $this->load->view('partials/userHeader');
 ?>
-
 <body>
-	<a href="/">Go Back</a>
+	<div class="container">
+
+	<a class="outlined" href="/"><span class="glyphicon glyphicon-arrow-left"></span> Go Back</a>
+	<div class="row">
 	<h2>Black Belt for Staff</h2>
-	<img src="">
+	<div class="col-md-5">
+	<img class="img-rounded col-md-12"  src="/assets/img/placeholder.jpg">
+		<div class="row">
+			<ul class="inline-list">
+				<li><a href="#"><img src="/assets/img/placeholder-icon.jpg"></a></li>
+				<li><a href="#"><img src="/assets/img/placeholder-icon.jpg"></a></li>
+				<li><a href="#"><img src="/assets/img/placeholder-icon.jpg"></a></li>
+				<li><a href="#"><img src="/assets/img/placeholder-icon.jpg"></a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="col-md-7">
+	<h3>Product Description</h3>
 	<p>Description description description description description  description description description description  description description description description  description description description description  description description description description  description description description description  description description description description  description description description description  description description description description  description description description description </p>
 	<div class="btn-group" role="group" aria-label="...">
 		<div class="btn-group" role="group">
@@ -22,6 +36,8 @@ $this->load->view('partials/userHeader');
 			</ul>
 		</div>
 		<button type="button" class="btn btn-default">Buy</button>
+	</div>
+	</div>
 	</div>
 	<h3>Similar Items</h3>
 	<div class="row">
@@ -49,6 +65,7 @@ $this->load->view('partials/userHeader');
 			<a href=""><img src="/assets/img/imgPlaceholder.png"></a>
 			<p>Description</p>
 		</div>
+	</div>
 	</div>
 </body>
 </html>

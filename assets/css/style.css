@@ -33,3 +33,8 @@
 .clear-top {
 	margin-top: 15px;
 }
+.inline-list li {
+	display: inline-block;
+	text-decoration: none;
+	margin:10px;
+}
