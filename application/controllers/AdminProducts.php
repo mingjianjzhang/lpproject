@@ -13,7 +13,7 @@ class AdminProducts extends CI_Controller {
 		$this->load->view('adminProductsView', array("categories" => $data));
 	}
 
-	public function uploadImage() {
+	public function addProduct() {
 
         $config['upload_path']          = './assets/img/products/';
         $config['allowed_types']        = 'gif|jpg|png';
@@ -24,7 +24,12 @@ class AdminProducts extends CI_Controller {
         $this->upload->do_upload('userfile');
         $productInfo = $this->input->post();
         $productInfo['img'] = $this->upload->data('file_name');
-        $this->Product->addProduct($productInfo);
+
+        var_dump($this->Product->addProduct($productInfo));
+
+        $productID=$this->db->insert_id();
+        // $imageInfo = array("productID" => $productID, "src" => $this->upload->data('file_name'));
+        // $this->Product->addImage($imageInfo);
 
 
 	}

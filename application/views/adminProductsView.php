@@ -97,9 +97,9 @@ $this->load->view("partials/adminNav");
 	
 				<div class="modal-body">
 
-				<?php echo form_open_multipart('AdminProducts/uploadImage');?>
+				<?php echo form_open_multipart('AdminProducts/addProduct');?>
 
-						<input type="file" name="userfile" size="20" />
+						
 					<div class="form-group">
 						<label for="name">Name</label>
 						<input class="form-control" type="text" name="name" id="name">
@@ -138,11 +138,10 @@ $this->load->view("partials/adminNav");
 							</div>
 						</div>
 					</div>
-					<div class="form-group">
-						<p> Categories </p>
-						
-
-					</div>
+			<!-- 		<div class="form-control">
+						<label for="userfile">Images</label> -->
+						<input id="userfile" type="file" name="userfile" size="20" />	
+					<!-- </div> -->
 					<button type="submit" class="btn btn-primary">Submit</button>
 					</form>
 <!-- 					<div class="form-group">

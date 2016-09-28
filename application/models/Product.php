@@ -15,10 +15,15 @@ class Product extends CI_Model {
 	{
 		
 	}
-
+	public function addImage($imageInfo) {
+		$query = "INSERT INTO images (product_id, src, is_main, created_at, updated_at) VALUES(?, ?, 1, now(), now())";
+		$values = array($imageInfo['productID'], $imageInfo['src']);
+		return $this->db->query($query, $values);
+	}
 	public function addProduct($productInfo) {
-		$query = "INSERT INTO products (name, price, img, inventory, description, category_id) VALUES (?, ?, ?, ?, ?, ?)";
-		$values = array($productInfo['name'], $productInfo['price'], $productInfo['img'], $productInfo['inventory'], $productInfo['description'], $productInfo['category_id']);
+		$query = "INSERT INTO products (name, price, inventory, description, category_id) VALUES (?, ?, ?, ?, ?)";
+		$values = array($productInfo['name'], intval($productInfo['price']), intval($productInfo['inventory']), $productInfo['description'], intval($productInfo['category']));
+		return $this->db->query($query, $values);
 	}
 	public function getCategories() {
 		$results = array();
