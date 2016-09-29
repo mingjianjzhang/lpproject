@@ -7,13 +7,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<meta charset="UTF-8"/>
 	<title>BootCamp Supply</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title></title>
 	<!-- Jquery Theme -->
 	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/hot-sneaks/jquery-ui.css">
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link href="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/css/select2.css" rel="stylesheet"/>
-
 	
 	<!-- Personal CSS -->
 	<link rel="stylesheet" href="/assets/css/style.css">

@@ -5,8 +5,6 @@ $this->load->view("partials/adminNav");
 
 <div class="container">
 
-<?php var_dump($categories) ?>
-
 	<div class="row">
 		<div class="col-sm-6">
 			<form id="adminSearchProducts">
@@ -19,7 +17,6 @@ $this->load->view("partials/adminNav");
 			<a class="btn btn-default btn-primary pull-right" data-toggle="modal" data-target="#editAddProductModal"> Add new product </a>
 		</div>
 	</div>
-
 
 	<div class="row">
 		<table class="table">
@@ -60,13 +57,12 @@ $this->load->view("partials/adminNav");
 				<div class="modal-content">
 					<div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal">&times;</button>
-						<h4 class="modal-title">Edit Product - Product ID 1 </h4>
+						<h4 class="modal-title">Edit Product - Product ID 1</h4>
 					</div>
 	
 				<div class="modal-body">
 
 				<?php echo form_open_multipart('AdminProducts/addProduct');?>
-
 						
 					<div class="form-group">
 						<label for="name">Name</label>
