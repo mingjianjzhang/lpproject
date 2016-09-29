@@ -29,6 +29,7 @@ $this->load->view('partials/userHeader');
 		<?php } ?>
 	</div>
 	<div class="col-md-6 col-xs-12 col-md-offset-1 outlined">
+		
 		<?php foreach ($products as $product) { ?>
 		<div class="col-xs-6 col-md-4">
 			<a href="/product/<?= $product['id'] ?>" class="thumbnail">

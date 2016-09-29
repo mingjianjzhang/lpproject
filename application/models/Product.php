@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Product extends CI_Model {
 	public function getAll() 
 	{
-		return $this->db->query("SELECT products.id, images.src AS img FROM products JOIN images ON products.id=images.product_id")->result_array();
+		return $this->db->query("SELECT products.id, images.src AS img FROM products LEFT JOIN images ON products.id=images.product_id")->result_array();
 	}
 	public function getItemDetails($id)
 	{
