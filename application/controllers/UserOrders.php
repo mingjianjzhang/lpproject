@@ -43,7 +43,6 @@ class UserOrders extends CI_Controller {
 	public function pay() {
 		$this->load->model('Order');
 		$post = $this->input->post();
-		var_dump($post);
 		$this->Order->processOrder($post);
 
 	}
