@@ -90,7 +90,7 @@ CREATE TABLE `categories` (
 
 LOCK TABLES `categories` WRITE;
 /*!40000 ALTER TABLE `categories` DISABLE KEYS */;
-INSERT INTO `categories` VALUES (1,'Electronics',0),(2,'Food',0),(3,'Furniture',0),(4,'Instructors',0),(5,'Computer',1),(6,'Presentation',1),(7,'Office',3),(8,'Home',3),(9,'Snacks',2),(10,'Fruit',2),(11,'Fridge',2),(12,'Intern',4),(13,'Lead',4);
+INSERT INTO `categories` VALUES (1,'Electronics',NULL),(2,'Food',NULL),(3,'Furniture',NULL),(4,'Instructors',NULL),(5,'Computer',1),(6,'Presentation',1),(7,'Office',3),(8,'Home',3),(9,'Snacks',2),(10,'Fruit',2),(11,'Fridge',2),(12,'Intern',4),(13,'Lead',4);
 /*!40000 ALTER TABLE `categories` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -242,4 +242,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-09-29 14:14:02
+-- Dump completed on 2016-09-29 14:15:53
