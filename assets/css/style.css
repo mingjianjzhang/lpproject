@@ -62,4 +62,13 @@
 	list-style-type: none;
 }
 
-.subcategories 
+input[type="file"] {
+	display: inline-block;
+	width: 50%;
+	margin-bottom: 2em;
+	margin-right: 1.5em;
+}
+
+#fileLabel {
+	display: block;
+}

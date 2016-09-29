@@ -24,6 +24,12 @@ $('.imageCheck').change(function() {
 		$('.imageCheck').not(this).prop('disabled', false);
 	}
 });
+
+
+	
+
+
+
 </script>
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -32,7 +38,6 @@ $('.imageCheck').change(function() {
 
 			<div class="modal-body">
 				<?php var_dump($product) ?>
-				<?php echo form_open_multipart('AdminProducts/addProduct');?>
 						
 					<div class="form-group">
 						<label for="name">Name</label>
@@ -72,9 +77,12 @@ $('.imageCheck').change(function() {
 							</div>
 						</div>
 					</div>
-	
-						<input id="userfile" type="file" name="userfile" size="20" />	
+						<form action="/AdminProducts/uploadImage" method="post" enctype="multipart/form-data">
+							<label id="fileLabel" for="userfile"> Images </label>
+							<input class="form-control" id="userfile" type="file" name="userfile" size="20" />
+							<button type="submit" class="btn btn-success">Upload</button>	
 						</form>
+
 
 
 				

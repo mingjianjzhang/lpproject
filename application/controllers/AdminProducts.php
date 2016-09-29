@@ -33,6 +33,7 @@ class AdminProducts extends CI_Controller {
 
 	}
 
+
 	public function displayAddEdit() {
 		if ($this->input->post('id') == 0) {
 			$this->load->view("partials/addEditProductModal", array("product" => "add", "categories" => $this->Product->getCategories()));
@@ -40,6 +41,19 @@ class AdminProducts extends CI_Controller {
 			$this->load->view("partials/addEditProductModal", array("product" => $this->Product->getItemDetails($this->input->post('id')),"categories" => $this->Product->getCategories()));
 		}
 		
+	}
+
+	public function uploadImage() {
+
+		$config['upload_path']          = './assets/img/products/';
+		$config['allowed_types']        = 'gif|jpg|png|jpeg';
+		$config['max_size']             = 100;
+		$config['max_width']            = 1024;
+		$config['max_height']           = 768;       
+		$this->load->library('upload', $config);
+		$this->upload->do_upload('userfile');
+		echo $this->upload->data('file_name');
+
 	}
 
 

@@ -22,6 +22,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<!-- Jquery UI -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.0/jquery-ui.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/js/select2.js"></script>
+	<script src="/assets/js/ajaxFileUpload.js"></script>
 
 	<!-- Bootstrap JS -->
 

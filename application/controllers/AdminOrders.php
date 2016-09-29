@@ -13,9 +13,13 @@ class AdminOrders extends CI_Controller {
 		$this->load->model('Order');
 		$info = $this->Order->getOrder($orderID);
 		$item = $this->Order->getOrderItems($orderID);
-		$data = array('items' => $item, 'billing' => $info);
+		$data = array('items' => $item, 'info' => $info);
 		$this->load->view('adminShowOrderView', $data);
 
+	}
+
+	public function test() {
+		$this->load->view('upload');
 	}
 
 }

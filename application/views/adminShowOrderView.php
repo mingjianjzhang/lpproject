@@ -6,17 +6,23 @@ $this->load->view("partials/adminNav");
 <div class="container">
 	<div class="row">
 		<div class="col-sm-3">
-			<p> Order ID: <?= $billing['id'] ?> </p>
-			<h5> Customer Shipping Info </h5>
+			<p> Order ID: <?= $info['id'] ?> </p>
+			<h5> Customer Name </h5>
+				<p><?= $info['first_name'] ?> <?= $info['last_name'] ?></p>
+			<h5> Customer Shipping Address </h5>
+		
 			<ul class="nav">
-				<li>asdf</li>
-				<li>asdf</li>
-				<li>asdf</li>
+				<li><?= $info['shipping_address']?></li>
+
 			</ul>
 			<h5> Customer Billing Info </h5>
 			<ul class="nav">
-				<li><?= $billing['first_name'] ?> <?= $billing['last_name'] ?></li>
-				<li><?= $billing['billing_address'] ?></lfi>
+				<li>Address</li>
+				<li><?= $info['billing_address'] ?></li>
+				<li>Credit Card</li>
+				<li><?= $info['card'] ?></li>
+				<li>Expiration Date</li>
+				<li><?= $info['expiration'] ?></li>
 			</ul>
 
 		</div>
@@ -42,24 +48,37 @@ $this->load->view("partials/adminNav");
 			</table>
 			<div class="row">
 				<div class="col-sm-5">
-					<p class="bg-success">Status: <?php if($billing['status'] == 1) {
+					<p class="<?php if($info['status'] == 1) {
+															echo 'bg-warning';
+														}
+														if($info['status'] == 2) {
+															echo 'bg-info';
+														}
+														if($info['status'] == 3) {
+															echo 'bg-success';
+														}
+														if($info['status'] == 0) {
+															echo 'bg-danger';
+														} ?>">
+
+					Status: <?php if($info['status'] == 1) {
 															echo 'Submitted';
 														}
-														if($billing['status'] == 2) {
+														if($info['status'] == 2) {
 															echo 'Processing';
 														}
-														if($billing['status'] == 3) {
+														if($info['status'] == 3) {
 															echo 'Shipped';
 														}
-														if($billing['status'] == 0) {
+														if($info['status'] == 0) {
 															echo 'Cancelled';
 														} ?></p>
 				</div>
 				<div class="col-sm-5 pull-right">
 					<ul class="nav">
-						<li>Sub-total: $<?= $billing['total'] ?> </li>
+						<li>Sub-total: $<?= $info['total'] ?> </li>
 						<li>Shipping: $1.00</li>
-						<li>Total Price: $<?= $billing['total']+1 ?> </li>
+						<li>Total Price: $<?= $info['total']+1 ?> </li>
 					</ul>
 				</div>
 			</div>
