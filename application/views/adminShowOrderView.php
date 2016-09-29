@@ -6,7 +6,7 @@ $this->load->view("partials/adminNav");
 <div class="container">
 	<div class="row">
 		<div class="col-sm-3">
-			<p> Order ID: 1 </p>
+			<p> Order ID: <?= $billing['id'] ?> </p>
 			<h5> Customer Shipping Info </h5>
 			<ul class="nav">
 				<li>asdf</li>
@@ -15,9 +15,8 @@ $this->load->view("partials/adminNav");
 			</ul>
 			<h5> Customer Billing Info </h5>
 			<ul class="nav">
-				<li>asd</li>
-				<li>asdf</lfi>
-				<li>asdf</li>
+				<li><?= $billing['first_name'] ?> <?= $billing['last_name'] ?></li>
+				<li><?= $billing['billing_address'] ?></lfi>
 			</ul>
 
 		</div>
@@ -31,23 +30,36 @@ $this->load->view("partials/adminNav");
 						<td>Quantity</td>
 						<td>Total</td>
 					</tr>
+				<?php foreach($items as $item) { ?>
 					<tr>
-						<td>1</td>
-						<td>Computer</td>
-						<td>$145.99</td>
-						<td>1</td>
-						<td>$145.99</td>
-				</table>
-			</tr>
+						<td><?= $item['product_id'] ?></td>
+						<td><?= $item['name'] ?></td>
+						<td>$<?= $item['price'] ?></td>
+						<td><?= $item['quantity'] ?></td>
+						<td>$<?= $item['price']*$item['quantity'] ?></td>
+					</tr>
+				<?php } ?>
+			</table>
 			<div class="row">
 				<div class="col-sm-5">
-					<p class="bg-success">Status: shipped</p>
+					<p class="bg-success">Status: <?php if($billing['status'] == 1) {
+															echo 'Submitted';
+														}
+														if($billing['status'] == 2) {
+															echo 'Processing';
+														}
+														if($billing['status'] == 3) {
+															echo 'Shipped';
+														}
+														if($billing['status'] == 0) {
+															echo 'Cancelled';
+														} ?></p>
 				</div>
 				<div class="col-sm-5 pull-right">
 					<ul class="nav">
-						<li>Sub-total: $145.99</li>
-						<li>Shipping: $1:00</li>
-						<li>Total Price: $146.99</li>
+						<li>Sub-total: $<?= $billing['total'] ?> </li>
+						<li>Shipping: $1.00</li>
+						<li>Total Price: $<?= $billing['total']+1 ?> </li>
 					</ul>
 				</div>
 			</div>

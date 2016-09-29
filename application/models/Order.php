@@ -49,4 +49,14 @@ class Order extends CI_Model {
 		return $this->db->query("SELECT orders.id, users.first_name, users.last_name, DATE_FORMAT(orders.created_at, '%m-%d-%Y') as date, CONCAT(street, ', ', city, ', ', state, ' ', zip) as billing_address, SUM(products.price * orders_products.quantity) as total, orders.status FROM orders JOIN users ON orders.user_id=users.id JOIN billing ON users.billing_id=billing.id JOIN addresses ON billing_address_id=addresses.id JOIN orders_products ON orders_products.order_id = orders.id JOIN products ON products.id=orders_products.product_id GROUP BY orders.id")->result_array();
 	}
 
+	public function getOrder($orderID) {
+		return $this->db->query("SELECT orders.id, users.first_name, users.last_name, DATE_FORMAT(orders.created_at, '%m-%d-%Y') as date, CONCAT(street, ', ', city, ', ', state, ' ', zip) as billing_address, SUM(products.price * orders_products.quantity) as total, orders.status FROM orders JOIN users ON orders.user_id=users.id JOIN billing ON users.billing_id=billing.id JOIN addresses ON billing_address_id=addresses.id JOIN orders_products ON orders_products.order_id = orders.id JOIN products ON products.id=orders_products.product_id WHERE orders.id = {$orderID}")->row_array();
+	}
+
+	public function getOrderItems($orderID) {
+		return $this->db->query("SELECT * FROM orders_products
+			JOIN products ON orders_products.product_id = products.id
+				WHERE order_id = {$orderID}")->result_array();
+	}
+
 }

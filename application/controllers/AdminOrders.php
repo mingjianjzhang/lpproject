@@ -10,13 +10,12 @@ class AdminOrders extends CI_Controller {
 	}
 
 	public function showOrder($orderID) {
-		$this->load->view('adminShowOrderView');
+		$this->load->model('Order');
+		$info = $this->Order->getOrder($orderID);
+		$item = $this->Order->getOrderItems($orderID);
+		$data = array('items' => $item, 'billing' => $info);
+		$this->load->view('adminShowOrderView', $data);
+
 	}
-
-
-
-
-
-
 
 }
