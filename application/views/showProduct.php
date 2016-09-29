@@ -1,7 +1,7 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
-$this->load->view("partials/head");
-$this->load->view('partials/userHeader');
+	defined('BASEPATH') OR exit('No direct script access allowed');
+	$this->load->view("partials/head");
+	$this->load->view('partials/userHeader');
 ?>
 <div class="container">
 	<div class="col-md-12">
@@ -42,10 +42,10 @@ $this->load->view('partials/userHeader');
 		<div class="row">
 			<h3>Similar Items</h3>
 			<? foreach ($similar as $similarThing) { ?>
-				<div class="col-md-2">
-					<a href="/product/<?= $similarThing['id'] ?>"><img width="100%" src="/assets/img/products/<?= $similarThing['img'] ?>"></a>
-					<p><?= $similarThing['name'] ?>, $<?= $similarThing['price'] ?></p>
-				</div>
+			<div class="col-md-2">
+				<a href="/product/<?= $similarThing['id'] ?>"><img width="100%" src="/assets/img/products/<?= $similarThing['img'] ?>"></a>
+				<p><?= $similarThing['name'] ?>, $<?= $similarThing['price'] ?></p>
+			</div>
 			<?php } ?>
 		</div>
 	</div>

@@ -27,7 +27,4 @@ class Order extends CI_Model {
 		$this->db->query($sql, $values);
 		// adjust inventory
 	}
-
-
-
 }

@@ -34,5 +34,4 @@ class Product extends CI_Model {
 		}
 		return $results;
 	}
-
 }

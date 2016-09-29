@@ -17,7 +17,4 @@ class AdminOrders extends CI_Controller {
 
 
 
-
-
-
 }

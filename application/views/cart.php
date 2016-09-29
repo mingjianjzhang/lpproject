@@ -1,69 +1,71 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
-$this->load->view("partials/head");
-$this->load->view('partials/userHeader');
+	defined('BASEPATH') OR exit('No direct script access allowed');
+	$this->load->view("partials/head");
+	$this->load->view('partials/userHeader');
 ?>
 <body>
 	<div class="container">
 		<div class="col-md-12">
 			<?php if($this->session->cart == null){ ?>
 			<h3>
-				<?php echo 'Your cart is empty.'; ?> </h3> <?php } else { ?>
-				<table class="table table-striped outlined">
-					<tr>
-						<th>Item</th>
-						<th>Price</th> 
-						<th>Quantity</th>
-						<th>Total</th>
-					</tr>
-					<?php  foreach ($this->session->cart as $item) { ?>
-					<tr>
-						<td><?= $item['name'] ?></td>
-						<td>$<?= $item['price'] ?></td> 
-						<td><?= $item['quantity'] ?> <a href="">Update</a><img src="/assets/img/trash.png" width="25"></td>
-						<td>$<?= $item['total'] ?></td>
-					</tr>
-					<?php }?>
-
-				</table>
-				<p class="pull-right">Total:</p>	
-
-				<a href="/empty"><button class="btn btn-danger">Empty Cart</button></a>
+				<?php echo 'Your cart is empty.'; ?>
+				
+			</h3>
+			<?php } else { ?>
+			<table class="table table-striped outlined">
+				<tr>
+					<th>Item</th>
+					<th>Price</th> 
+					<th>Quantity</th>
+					<th>Total</th>
+				</tr>
+				<?php  foreach ($this->session->cart as $item) { ?>
+				<tr>
+					<td><?= $item['name'] ?></td>
+					<td>$<?= $item['price'] ?></td> 
+					<td><?= $item['quantity'] ?> <a href="">Update</a><img src="/assets/img/trash.png" width="25"></td>
+					<td>$<?= $item['total'] ?></td>
+				</tr>
 				<?php }?>
-				<a href="/store"><button class="btn btn-success">Continue Shopping</button></a>
-			</div>
-			<div class="col-md-5 col-md-offset-1">
-				<h1>Shipping Information</h1>
-				<form class="form-horizontal" action="/UserOrders/pay" method="post">
-					<div class="input-group clear-bottom">
-						<span class="input-group-addon" id="basic-addon1">First Name:</span>
-						<input type="text" class="form-control" name="shipFirstName" placeholder="First Name" aria-describedby="basic-addon1">
-					</div>
-					<div class="input-group clear-bottom">
-						<span class="input-group-addon" id="basic-addon1">Last Name:</span>
-						<input type="text" class="form-control" name="shipLastName" placeholder="Last Name" aria-describedby="basic-addon1">
-					</div>
-					<div class="input-group clear-bottom">
-						<span class="input-group-addon" id="basic-addon1">Street:</span>
-						<input type="text" class="form-control" name="shipStreet" placeholder="Street" aria-describedby="basic-addon1">
-					</div>
-					<div class="input-group clear-bottom">
-						<span class="input-group-addon" id="basic-addon1">City:</span>
-						<input type="text" class="form-control" name="shipCity" placeholder="City" aria-describedby="basic-addon1">
-					</div>
-					<div class="input-group clear-bottom">
-						<span class="input-group-addon" id="basic-addon1">State:</span>
-						<input type="text" class="form-control" name="shipState" placeholder="State" aria-describedby="basic-addon1">
-					</div>
-					<div class="input-group clear-bottom">
-						<span class="input-group-addon" id="basic-addon1">Zip:</span>
-						<input type="text" class="form-control" name="shipZip" placeholder="Zip" aria-describedby="basic-addon1">
-					</div>
-					<!-- </form> -->
+
+			</table>
+			<p class="pull-right">Total:</p>	
+			<a href="/empty"><button class="btn btn-danger">Empty Cart</button></a>
+			<?php }?>
+			<a href="/store"><button class="btn btn-success">Continue Shopping</button></a>
+		</div>
+		<div class="col-md-5 col-md-offset-1">
+			<h1>Shipping Information</h1>
+			<form class="form-horizontal" action="/UserOrders/pay" method="post">
+				<div class="input-group clear-bottom">
+					<span class="input-group-addon" id="basic-addon1">First Name:</span>
+					<input type="text" class="form-control" name="shipFirstName" placeholder="First Name" aria-describedby="basic-addon1">
 				</div>
-				<div class="col-md-5">
-					<h1>Billing Information</h1>
-					<p><input type="hidden" value="notSame" name="isSame">
+				<div class="input-group clear-bottom">
+					<span class="input-group-addon" id="basic-addon1">Last Name:</span>
+					<input type="text" class="form-control" name="shipLastName" placeholder="Last Name" aria-describedby="basic-addon1">
+				</div>
+				<div class="input-group clear-bottom">
+					<span class="input-group-addon" id="basic-addon1">Street:</span>
+					<input type="text" class="form-control" name="shipStreet" placeholder="Street" aria-describedby="basic-addon1">
+				</div>
+				<div class="input-group clear-bottom">
+					<span class="input-group-addon" id="basic-addon1">City:</span>
+					<input type="text" class="form-control" name="shipCity" placeholder="City" aria-describedby="basic-addon1">
+				</div>
+				<div class="input-group clear-bottom">
+					<span class="input-group-addon" id="basic-addon1">State:</span>
+					<input type="text" class="form-control" name="shipState" placeholder="State" aria-describedby="basic-addon1">
+				</div>
+				<div class="input-group clear-bottom">
+					<span class="input-group-addon" id="basic-addon1">Zip:</span>
+					<input type="text" class="form-control" name="shipZip" placeholder="Zip" aria-describedby="basic-addon1">
+				</div>
+				<!-- </form> -->
+			</div>
+			<div class="col-md-5">
+				<h1>Billing Information</h1>
+				<p><input type="hidden" value="notSame" name="isSame">
 					<input type="checkbox" value="same" name="isSame"> Same as shipping</p>
 					<!-- <form> -->
 					<div class="input-group clear-bottom">
