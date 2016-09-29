@@ -45,7 +45,7 @@ $this->load->view('partials/userHeader');
 					<img class="thumbnail dropshadow" src="/assets/img/instructors-cat.jpg" height="240" alt="category image">
 					<div class="overlay">
 					    <h2>< Instructors /></h2>
-						<a href="/UserProducts/displayProductsByCategory/4">Shop Now</a>
+						<a class="info" href="/UserProducts/displayProductsByCategory/4">Shop Now</a>
 					</div>
 				</div>
 			</div>
