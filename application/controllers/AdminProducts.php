@@ -34,7 +34,12 @@ class AdminProducts extends CI_Controller {
 	}
 
 	public function displayAddEdit() {
-		//ajax posting
+		if ($this->input->post('id') == 0) {
+			$this->load->view("partials/addEditProductModal", array("product" => "add", "categories" => $this->Product->getCategories()));
+		} else {
+			$this->load->view("partials/addEditProductModal", array("product" => $this->Product->getItemDetails($this->input->post('id')),"categories" => $this->Product->getCategories()));
+		}
+		
 	}
 
 

@@ -10,8 +10,10 @@ class Product extends CI_Model {
 	}
 	public function getItemDetails($id)
 	{
-		$sql="SELECT products.id as id, name, price, images.src AS img, description, inventory FROM products JOIN images ON products.id=images.product_id WHERE products.id = $id";
-		return $this->db->query($sql)->row_array();
+		$sql="SELECT products.id as id, name, price, images.src AS img, description, inventory FROM products JOIN images ON products.id=images.product_id WHERE products.id = $id AND is_main = 1";
+		$result = $this->db->query($sql)->row_array();
+		$result['images'] = $this->db->query("SELECT * FROM images WHERE product_id = {$result['id']}")->result_array();
+		return $result;
 	}
 	public function getSimilarItems($id) 
 	{
