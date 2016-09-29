@@ -30,7 +30,7 @@
 				<?php }?>
 
 			</table>
-			<p class="pull-right">Total:</p>	
+			<p class="pull-right">Total:</p>
 			<a href="/empty"><button class="btn btn-danger">Empty Cart</button></a>
 			<?php }?>
 			<a href="/store"><button class="btn btn-success">Continue Shopping</button></a>
