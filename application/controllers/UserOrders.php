@@ -13,7 +13,15 @@ class UserOrders extends CI_Controller {
 		
 		if(isset($_SESSION['cart'])) {
 			$tempCart = $this->session->cart;
-			$tempCart[] = $post;
+			for($i=0; $i<count($tempCart); $i++) {
+				if($post['name'] == $tempCart[$i]['name']) {
+					$tempCart[$i]['quantity']+=$post['quantity'];
+					$same = true;
+				}
+			}
+			if(!$same){
+				$tempCart[] = $post;
+			}
 			$this->session->set_userdata('cart', $tempCart);
 		}
 		else {

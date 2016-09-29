@@ -26,11 +26,11 @@ $this->load->view('partials/userHeader');
 				<?php }?>
 
 			</table>
-			<p>Total:</p>	
+			<p class="pull-right">Total:</p>	
 
-			<a href="empty"><button class="btn btn-danger">Empty Cart</button></a>
+			<a href="/empty"><button class="btn btn-danger">Empty Cart</button></a>
 			<?php }?>
-			<a href="store"><button class="btn btn-success">Continue Shopping</button></a>
+			<a href="/store"><button class="btn btn-success">Continue Shopping</button></a>
 		</div>
 		<div class="col-md-5 col-md-offset-1">
 			<h1>Shipping Information</h1>

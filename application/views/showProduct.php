@@ -43,8 +43,8 @@ $this->load->view('partials/userHeader');
 		<div class="row">
 			<h3>Similar Items</h3>
 			<? foreach ($similar as $similarThing) { ?>
-				<div class="col-md-1">
-					<a href="/product/<?= $similarThing['id'] ?>"><img src="/assets/img/products/<?= $similarThing['img'] ?>"></a>
+				<div class="col-md-2">
+					<a href="/product/<?= $similarThing['id'] ?>"><img width="100%" src="/assets/img/products/<?= $similarThing['img'] ?>"></a>
 					<p><?= $similarThing['name'] ?>, $<?= $similarThing['price'] ?></p>
 				</div>
 			<?php } ?>
