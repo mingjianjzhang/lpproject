@@ -27,12 +27,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 	<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<script>
-	$(document).ready(function(){ 
-		$('#adminCategorySelect').select2({
- 			 templateResult: function (data) {    
+		$(document).ready(function(){ 
+			$('#adminCategorySelect').select2({
+				templateResult: function (data) {    
     // We only really care if there is an element to pull classes from
     if (!data.element) {
-      return data.text;
+    	return data.text;
     }
 
     var $element = $(data.element);
@@ -45,7 +45,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     return $wrapper;
   }
 });
-	});
+		});
 
 	</script>
 </head>
