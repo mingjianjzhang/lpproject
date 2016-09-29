@@ -25,12 +25,15 @@
 					<td><?= $item['name'] ?></td>
 					<td>$<?= $item['price'] ?></td> 
 					<td><?= $item['quantity'] ?> <a href="">Update</a><img src="/assets/img/trash.png" width="25"></td>
-					<td>$<?= $item['total'] ?></td>
+					<td>$<?= $item['price']*$item['quantity'] ?></td>
 				</tr>
-				<?php }?>
+				<?php } ?>
 
 			</table>
-			<p class="pull-right">Total:</p>	
+			<?php $cash = 0; for ($i = 0; $i < count($this->session->cart); $i++) {
+					$cash += ($this->session->cart[$i]['price']*$this->session->cart[$i]['quantity']);
+			}?>
+			<h4 class="pull-right">Total: <?= $cash ?></h4>	
 			<a href="/empty"><button class="btn btn-danger">Empty Cart</button></a>
 			<?php }?>
 			<a href="/store"><button class="btn btn-success">Continue Shopping</button></a>
