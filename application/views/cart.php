@@ -137,9 +137,9 @@
 								<option value="2023">2023</option>
 							</select>
 						</div>
-						<div class="col-md-10 clear-bottom clear-top">
-							<button class="btn btn-success pull-right">Pay</button>
-						</div>
+					</div>						
+					<div class="col-md-10 clear-bottom clear-top">
+						<button class="btn btn-success pull-right">Pay</button>
 					</div>
 				</div>
 			</form>
