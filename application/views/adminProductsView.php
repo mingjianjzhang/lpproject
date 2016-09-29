@@ -37,7 +37,7 @@ $this->load->view("partials/adminNav");
 				<td><?= $product['id']?></td>
 				<td><?= $product['name']?></td>
 				<td><?= $product['inventory']?></td>
-				<td><?= $product['sold']?></td>
+				<td>sold</td>
 				<td>
 					<a data-toggle="modal" data-target="#editAddProductModal">Edit</a>
 					<a href="">Delete</a>
