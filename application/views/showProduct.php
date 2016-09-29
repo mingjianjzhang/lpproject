@@ -1,8 +1,12 @@
 <?php
-	defined('BASEPATH') OR exit('No direct script access allowed');
-	$this->load->view("partials/head");
-	$this->load->view('partials/userHeader');
+defined('BASEPATH') OR exit('No direct script access allowed');
+$this->load->view("partials/head");
+$this->load->view('partials/userHeader');
 ?>
+
+<script type="">
+	
+</script>
 <div class="container">
 	<div class="col-md-12">
 		<a class="outlined" href="/store"><span class="glyphicon glyphicon-arrow-left"></span> Go Back</a>
@@ -12,10 +16,10 @@
 				<img class="img-rounded col-md-12"  src="/assets/img/products/<?= $info['img']?>">
 				<div class="row">
 					<ul class="inline-list">
-						<li><a href="#"><img src="/assets/img/placeholder-icon.jpg"></a></li>
-						<li><a href="#"><img src="/assets/img/placeholder-icon.jpg"></a></li>
-						<li><a href="#"><img src="/assets/img/placeholder-icon.jpg"></a></li>
-						<li><a href="#"><img src="/assets/img/placeholder-icon.jpg"></a></li>
+						<li><a href="#"><img src="/assets/img/products/<?= $info['img']?>1" width="90" data-toggle="modal" data-target="#showPic" id="1"></a></li>
+						<li><a href="#"><img src="/assets/img/products/<?= $info['img']?>2" width="90" data-toggle="modal" data-target="#showPic" id="2"></a></li>
+						<li><a href="#"><img src="/assets/img/products/<?= $info['img']?>3" width="90" data-toggle="modal" data-target="#showPic" id="3"></a></li>
+						<li><a href="#"><img src="/assets/img/products/<?= $info['img']?>4" width="90" data-toggle="modal" data-target="#showPic" id="4"></a></li>
 					</ul>
 				</div>
 			</div>
@@ -48,6 +52,26 @@
 			</div>
 			<?php } ?>
 		</div>
+	</div>
+</div>
+<!-- Modal -->
+<div id="showPic" class="modal fade" role="dialog">
+	<div class="modal-dialog">
+
+		<!-- Modal content-->
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<h4 class="modal-title">Product details:</h4>
+			</div>
+			<div class="modal-body">
+				<img src="/assets/img/products/<?= $info['img']?>" width="500">
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			</div>
+		</div>
+
 	</div>
 </div>
 </body>
