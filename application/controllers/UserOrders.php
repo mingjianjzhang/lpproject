@@ -29,7 +29,7 @@ class UserOrders extends CI_Controller {
 
 	public function cartKill() {
 		$this->session->sess_destroy();
-		$this->load->view('cart');
+		redirect('UserOrders/shoppingCart');
 	}
 
 
