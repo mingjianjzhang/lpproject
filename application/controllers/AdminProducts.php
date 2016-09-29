@@ -31,7 +31,10 @@ class AdminProducts extends CI_Controller {
         // $imageInfo = array("productID" => $productID, "src" => $this->upload->data('file_name'));
         // $this->Product->addImage($imageInfo);
 
+	}
 
+	public function displayAddEdit() {
+		//ajax posting
 	}
 
 

@@ -36,16 +36,15 @@ $this->load->view("partials/adminNav");
 			<tr>
 				<td><a href="/dashboard/orders/show/<?=$order['id']?>"><?=$order['id']?></a></td>
 				<td><?=$order['first_name']?> <?=$order['last_name']?></td>
-				<td><?=$order['id']?></td>
-				<td><?=$order['street']?> <?=$order['city']?> <?=$order['state']?> <?=$order['zip']?></td>
-				<td>need to calculate total</td>
+				<td><?=$order['date']?></td>
+				<td><?=$order['billing_address'] ?></td>
+				<td><?= $order['total'] ?></td>
 				<td>
 					<select name="status" class="form-control">
-						<option>Show All</option>
-						<option>Submitted</option>
-						<option>Processing</option>
-						<option>Shipped</option>
-						<option>Cancelled</option>
+						<option value = "1" <?= ($order['status'] == 1) ? "selected" : null ?>>Submitted</option>
+						<option value = "2" <?= ($order['status'] == 2) ? "selected" : null ?>>Processing</option>
+						<option value = "3" <?= ($order['status'] == 3) ? "selected" : null ?>>Shipped</option>
+						<option value = "0" <?= ($order['status'] == 0) ? "selected" : null ?>>Cancelled</option>
 					</select>
 				</td>
 			</tr>

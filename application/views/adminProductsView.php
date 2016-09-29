@@ -5,7 +5,7 @@ $this->load->view("partials/adminNav");
 
 <div class="container">
 
-	<div class="row">
+	<div class="row"> 
 		<div class="col-sm-6">
 			<form id="adminSearchProducts">
 				<div class="form-group">
@@ -34,7 +34,7 @@ $this->load->view("partials/adminNav");
 				<td><?= $product['id']?></td>
 				<td><?= $product['name']?></td>
 				<td><?= $product['inventory']?></td>
-				<td>sold</td>
+				<td><?= $product['sold'] ?></td>
 				<td>
 					<a data-toggle="modal" data-target="#editAddProductModal">Edit</a>
 					<a href="">Delete</a>
