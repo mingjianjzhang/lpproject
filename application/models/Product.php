@@ -8,7 +8,7 @@ class Product extends CI_Model {
 	}
 	public function getItemDetails($id)
 	{
-		$sql="SELECT name, price, images.src AS img, description, inventory FROM products JOIN images ON products.id=images.product_id WHERE products.id = $id";
+		$sql="SELECT products.id as id, name, price, images.src AS img, description, inventory FROM products JOIN images ON products.id=images.product_id WHERE products.id = $id";
 		return $this->db->query($sql)->row_array();
 	}
 	public function getSimilarItems($id) 

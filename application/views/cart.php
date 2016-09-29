@@ -6,6 +6,9 @@ $this->load->view('partials/userHeader');
 <body>
 	<div class="container">
 		<div class="col-md-12">
+			<?php if($this->session->cart == null){ ?>
+				<h3>
+					<?php echo 'Your cart is empty.'; ?> </h3> <?php } else { ?>
 			<table class="table table-striped outlined">
 				<tr>
 					<th>Item</th>
@@ -13,27 +16,21 @@ $this->load->view('partials/userHeader');
 					<th>Quantity</th>
 					<th>Total</th>
 				</tr>
+				<?php  foreach ($this->session->cart as $item) { ?>
 				<tr>
-					<td>Belt</td>
-					<td>$1</td> 
-					<td>5 <a href="">Update</a><img src="/assets/img/trash.png" width="25"></td>
-					<td>$5</td>
+					<td><?= $item['name'] ?></td>
+					<td>$<?= $item['price'] ?></td> 
+					<td><?= $item['quantity'] ?> <a href="">Update</a><img src="/assets/img/trash.png" width="25"></td>
+					<td>$<?= $item['total'] ?></td>
 				</tr>
-				<tr>
-					<td>Belt</td>
-					<td>$1</td> 
-					<td>5 <a href="">Update</a><img src="/assets/img/trash.png" width="25"></td>
-					<td>$5</td>
-				</tr>
-				<tr>
-					<td>Belt</td>
-					<td>$1</td> 
-					<td>5 <a href="">Update</a><img src="/assets/img/trash.png" width="25"></td>
-					<td>$5</td>
-				</tr>
+				<?php }?>
+
 			</table>
-			<p>Total:</p>
-			<button class="btn btn-success">Continue Shopping</button>
+			<p>Total:</p>	
+
+			<a href="empty"><button class="btn btn-danger">Empty Cart</button></a>
+			<?php }?>
+			<a href="store"><button class="btn btn-success">Continue Shopping</button></a>
 		</div>
 		<div class="col-md-5 col-md-offset-1">
 			<h1>Shipping Information</h1>
