@@ -2,7 +2,7 @@
 --
 -- Host: 127.0.0.1    Database: ecommerce
 -- ------------------------------------------------------
--- Server version	5.5.42
+-- Server version	5.6.28
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -118,7 +118,7 @@ CREATE TABLE `images` (
 
 LOCK TABLES `images` WRITE;
 /*!40000 ALTER TABLE `images` DISABLE KEYS */;
-INSERT INTO `images` VALUES (1,13,'sunChips.jpg',NULL,NULL,1),(2,14,'cheez-It.jpg',NULL,NULL,1),(3,15,'lg-monitor.jpg',NULL,NULL,1),(4,16,'ikea-lamp.jpg',NULL,NULL,1),(5,17,'chrisb.jpeg',NULL,NULL,1);
+INSERT INTO `images` VALUES (1,1,'algorithm.jpg','0000-00-00 00:00:00','0000-00-00 00:00:00',1),(2,2,'andy.jpg','0000-00-00 00:00:00','0000-00-00 00:00:00',1);
 /*!40000 ALTER TABLE `images` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -199,7 +199,7 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES (13,'Sun Chips',2.00,13,'Single serving bag of Sun chips in assorted flavors. Add a little bit of sun for those vitamin d deficient coders. ',NULL,2),(14,'Cheez-Its',2.00,17,'Single Serving of cheese snacks. Perfect for the 400 lb hacker that needs a break from hacking the DNC. ',NULL,2),(15,'LG Monitor',99.00,50,'Wide screen computer monitor. Slightly used and low glare perfect for 90 hours of coding, straight no breaks, so get back to work.',NULL,1),(16,'Tall Paper Lamp',40.00,4,'Tall color changing lamp perfect to set the mood or convince any coder to stay at their desk and write more code. Its soothing color changing bulb will make any person believe the outside world doesn’t exist. \nTall color changing lamp perfect to set the mood or convince any coder to stay at their desk and write more code. Its soothing color changing bulb will make any person believe the outside world doesn’t exist. \n',NULL,3),(17,'Chris',1000.00,1,'He\'s a man, and a teacher, and many other things as well.',NULL,13);
+INSERT INTO `products` VALUES (1,'algorithm',4.99,60,'A great book to really show you how much you don\'t know or understand!',1,8),(2,'andy',99.99,1,'All of Andy\'s great personal products',1,12),(3,'ballchair',59.99,1,'A ball to sit on',1,8),(4,'basketball',9.99,2,'Play some hoops while you wait for your coworkers to push up to Github!',1,7),(5,'bluechair',49.99,5,'Feeling blue? This is where you can sit',0,7),(6,'bluecouch',199.99,2,'Great for taking some naps',0,7),(7,'bookshelf',49.99,5,'Store your stuff here',0,7),(8,'bookshelfsmall',39.99,6,'Mini version for little things',0,7),(9,'chair',99.99,70,'A basic chair covered in \"leather\"',0,7),(10,'computerstand',59.99,10,'Move around like a boss!',0,7),(11,'fruit',9.99,8,'Get some vitamin C',0,10),(12,'markers',7.99,30,'\'Cuz you\'re always running dry',0,7),(13,'microwave',99.99,3,'Heat up your lunch, or your dinner, and even your breakfast',0,11);
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -242,4 +242,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-09-29  9:38:01
+-- Dump completed on 2016-09-29 12:41:02
