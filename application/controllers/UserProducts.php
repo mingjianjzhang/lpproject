@@ -15,6 +15,8 @@ class UserProducts extends CI_Controller {
 		$this->load->view('showProduct', $data);
 	}
 
+	public function displayProductsByCategory($id) {
 
+	}
 }
 

@@ -53,12 +53,12 @@ $route['default_controller'] = 'welcome';
 $route['store'] = 'UserProducts';
 $route['cart'] = 'UserOrders';
 $route['product/(:num)'] = 'UserProducts/viewProduct/$1';
-$route['']
+// $route['']
 $route['dashboard'] = 'welcome/adminDashboard';
 $route['dashboard/products'] = 'AdminProducts';
 $route['dashboard/orders'] = 'AdminOrders';
 $route['dashboard/orders/show/(:num)'] = 'AdminOrders/showOrder/$1';
-$route['getProductsByCategory/(:num)'] 
+$route['getProductsByCategory/(:num)'] =  'UserProducts/displayProductsByCategory/$1'; 
 $route['addToCart'] = 'UserOrders/purchase';
 $route['goToCart'] = 'UserOrders/shoppingCart';
 $route['empty'] = 'UserOrders/cartKill';
