@@ -36,7 +36,6 @@ $this->load->view('partials/userHeader');
 							<input type="submit" value="Buy" class="btn btn-default">
 						</form>
 					</div>
-						
 				</div>
 			</div>
 		</div>
