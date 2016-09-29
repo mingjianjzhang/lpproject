@@ -2,7 +2,7 @@
 --
 -- Host: 127.0.0.1    Database: ecommerce
 -- ------------------------------------------------------
--- Server version	5.6.28
+-- Server version	5.5.42
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -29,7 +29,7 @@ CREATE TABLE `addresses` (
   `state` varchar(2) DEFAULT NULL,
   `zip` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -38,6 +38,7 @@ CREATE TABLE `addresses` (
 
 LOCK TABLES `addresses` WRITE;
 /*!40000 ALTER TABLE `addresses` DISABLE KEYS */;
+INSERT INTO `addresses` VALUES (2,'135 Actress Street','Fargo','ND',92812),(4,'4456 Memory Lane','Salem','MA',93810),(5,'564 Preacher Blvd','Atlanta','GA',49149),(7,'145 gambling circle','St. Petersburg','CA',94828);
 /*!40000 ALTER TABLE `addresses` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -50,11 +51,12 @@ DROP TABLE IF EXISTS `billing`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `billing` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `card` int(11) DEFAULT NULL,
+  `card` bigint(20) DEFAULT NULL,
   `security_code` int(11) DEFAULT NULL,
-  `billing_address_id` int(11) NOT NULL,
+  `billing_address_id` int(11) DEFAULT NULL,
+  `expiration` date DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -63,6 +65,7 @@ CREATE TABLE `billing` (
 
 LOCK TABLES `billing` WRITE;
 /*!40000 ALTER TABLE `billing` DISABLE KEYS */;
+INSERT INTO `billing` VALUES (2,1231234441,123,2,'2016-04-01'),(3,1234123412341234,134,4,'2022-06-01'),(4,6789678967896789,678,5,'2023-07-01'),(6,1089018901890189,145,7,'2020-03-01');
 /*!40000 ALTER TABLE `billing` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -127,13 +130,13 @@ DROP TABLE IF EXISTS `orders`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `orders` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) NOT NULL,
   `status` tinyint(4) DEFAULT NULL,
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -142,6 +145,7 @@ CREATE TABLE `orders` (
 
 LOCK TABLES `orders` WRITE;
 /*!40000 ALTER TABLE `orders` DISABLE KEYS */;
+INSERT INTO `orders` VALUES (2,2,0,'2016-09-29 08:43:41','2016-09-29 08:43:41'),(3,3,2,'2016-09-29 08:50:42','2016-09-29 08:50:42'),(4,4,0,'2016-09-29 08:53:25','2016-09-29 08:53:25'),(6,6,1,'2016-09-29 08:57:57','2016-09-29 08:57:57');
 /*!40000 ALTER TABLE `orders` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -166,6 +170,7 @@ CREATE TABLE `orders_products` (
 
 LOCK TABLES `orders_products` WRITE;
 /*!40000 ALTER TABLE `orders_products` DISABLE KEYS */;
+INSERT INTO `orders_products` VALUES (2,13,12),(2,17,1),(3,13,12),(3,17,1),(4,13,4),(4,15,50),(4,16,3),(6,14,1),(6,16,2);
 /*!40000 ALTER TABLE `orders_products` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -215,7 +220,7 @@ CREATE TABLE `users` (
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -224,6 +229,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` VALUES (2,'Frances','McDormand',NULL,2,2,'2016-09-29 08:43:41','2016-09-29 08:43:41'),(3,'Vladimir ','Nabokov',NULL,4,3,'2016-09-29 08:50:42','2016-09-29 08:50:42'),(4,'Hazel','Motes',NULL,5,4,'2016-09-29 08:53:25','2016-09-29 08:53:25'),(6,'Fyodor','Dostoevsky',NULL,7,6,'2016-09-29 08:57:57','2016-09-29 08:57:57');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -236,4 +242,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-09-29  7:59:27
+-- Dump completed on 2016-09-29  9:38:01

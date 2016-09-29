@@ -13,6 +13,7 @@ class UserOrders extends CI_Controller {
 		
 		if(isset($_SESSION['cart'])) {
 			$tempCart = $this->session->cart;
+			$same = false;
 			for($i=0; $i<count($tempCart); $i++) {
 				if($post['name'] == $tempCart[$i]['name']) {
 					$tempCart[$i]['quantity']+=$post['quantity'];
@@ -42,6 +43,7 @@ class UserOrders extends CI_Controller {
 	public function pay() {
 		$this->load->model('Order');
 		$post = $this->input->post();
+		var_dump($post);
 		$this->Order->processOrder($post);
 
 	}

@@ -4,6 +4,7 @@
 	$this->load->view('partials/userHeader');
 ?>
 <body>
+<?php var_dump($this->session->cart) ?>
 	<div class="container">
 		<div class="col-md-12">
 			<?php if($this->session->cart == null){ ?>
@@ -37,6 +38,11 @@
 		<div class="col-md-5 col-md-offset-1">
 			<h1>Shipping Information</h1>
 			<form class="form-horizontal" action="/UserOrders/pay" method="post">
+					<input type="hidden" name="numProducts" value=<?= count($this->session->cart) ?>>
+				<?php for ($i = 0; $i < count($this->session->cart); $i++) { ?>
+					<input type="hidden" name="product_id<?= $i ?>" value="<?= $this->session->cart[$i]['id'] ?>">
+					<input type="hidden" name="quantity<?= $i ?>" value="<?= $this->session->cart[$i]['quantity'] ?>">
+				<?php } ?>
 				<div class="input-group clear-bottom">
 					<span class="input-group-addon" id="basic-addon1">First Name:</span>
 					<input type="text" class="form-control" name="shipFirstName" placeholder="First Name" aria-describedby="basic-addon1">
@@ -121,14 +127,14 @@
 						</div>
 						<div class="col-xs-3">
 							<select class="form-control" name="expiry-year">
-								<option value="16">2016</option>
-								<option value="17">2017</option>
-								<option value="18">2018</option>
-								<option value="19">2019</option>
-								<option value="20">2020</option>
-								<option value="21">2021</option>
-								<option value="22">2022</option>
-								<option value="23">2023</option>
+								<option value="2016">2016</option>
+								<option value="2017">2017</option>
+								<option value="2018">2018</option>
+								<option value="2019">2019</option>
+								<option value="2020">2020</option>
+								<option value="2021">2021</option>
+								<option value="2022">2022</option>
+								<option value="2023">2023</option>
 							</select>
 						</div>
 						<div class="col-md-10 clear-bottom clear-top">
