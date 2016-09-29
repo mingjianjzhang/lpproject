@@ -15,23 +15,6 @@
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
-					<li class="active"><a href="/">Home <span class="sr-only">(current)</span></a></li>
-					<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Products <span class="caret"></span></a>
-						<ul class="dropdown-menu">
-							<li><a href="#">Electronics</a></li>
-							<li><a href="#">Furniture</a></li>
-							<li><a href="#">Food/Snacks</a></li>
-						</ul>
-					</li>
-					<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Fake Routes <span class="caret"></span></a>
-						<ul class="dropdown-menu">
-							<li><a href="store">Store</a></li>
-							<li><a href="cart">Cart</a></li>
-							<li><a href="product">Product</a></li>
-						</ul>
-					</li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="/goToCart">Shopping Cart (#) <span class="glyphicon glyphicon-shopping-cart"></span></a></li>
