@@ -118,7 +118,7 @@ CREATE TABLE `images` (
 
 LOCK TABLES `images` WRITE;
 /*!40000 ALTER TABLE `images` DISABLE KEYS */;
-INSERT INTO `images` VALUES (1,1,'algorithm.jpg','0000-00-00 00:00:00','0000-00-00 00:00:00',1),(2,2,'andy.jpg','0000-00-00 00:00:00','0000-00-00 00:00:00',1),(3,3,'ballchair1.jpg',NULL,NULL,0),(4,4,'basketball1.jpg',NULL,NULL,0),(5,5,'bluechair1.jpg',NULL,NULL,0),(6,6,'bluecouch1.jpg',NULL,NULL,0),(7,7,'bookshelf1.jpg',NULL,NULL,0),(8,8,'bookshelfsmall1.jpg',NULL,NULL,0),(9,9,'chair1.jpg',NULL,NULL,0),(10,10,'computerstand1.jpg',NULL,NULL,0),(11,11,'fruit1.jpg',NULL,NULL,0),(12,12,'markers1.jpg',NULL,NULL,0),(13,13,'microwave1.jpg',NULL,NULL,0),(14,14,'pingpong1.jpg',NULL,NULL,0),(15,15,'projector1.jpg',NULL,NULL,0),(16,16,'whitefridge1.jpg',NULL,NULL,0),(17,17,'blackfridge1.jpg',NULL,NULL,0),(18,18,'chrisb.jpeg',NULL,NULL,0);
+INSERT INTO `images` VALUES (1,1,'algorithm1.jpg','0000-00-00 00:00:00','0000-00-00 00:00:00',1),(2,2,'andy1.jpg','0000-00-00 00:00:00','0000-00-00 00:00:00',1),(3,3,'ballchair1.jpg','0000-00-00 00:00:00','0000-00-00 00:00:00',1),(4,4,'basketball1.jpg','0000-00-00 00:00:00','0000-00-00 00:00:00',1),(5,5,'bluechair1.jpg',NULL,NULL,1),(6,6,'bluecouch1.jpg',NULL,NULL,1),(7,7,'bookshelf1.jpg',NULL,NULL,1),(8,8,'bookshelfsmall1.jpg',NULL,NULL,1),(9,9,'chair1.jpg',NULL,NULL,1),(10,10,'computerstand1.jpg',NULL,NULL,1),(11,11,'fruit1.jpg',NULL,NULL,1),(12,12,'markers1.jpg',NULL,NULL,1),(13,13,'microwave1.jpg',NULL,NULL,1),(14,14,'pingpong1.jpg',NULL,NULL,1),(15,15,'projector1.jpg',NULL,NULL,1),(16,16,'refrigerator1.jpg',NULL,NULL,1),(17,17,'refrigerator2.jpg',NULL,NULL,1),(18,18,'chrisb.jpeg',NULL,NULL,1);
 /*!40000 ALTER TABLE `images` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -242,4 +242,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-09-29 12:51:18
+-- Dump completed on 2016-09-29 13:12:35
