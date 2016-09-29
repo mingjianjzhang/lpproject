@@ -9,8 +9,8 @@ class AdminProducts extends CI_Controller {
 	}
 
 	public function index() {
-		$data = $this->Product->getCategories();
-		$this->load->view('adminProductsView', array("categories" => $data));
+		$data = array("products" => $this->Product->getAll(), "categories" => $this->Product->getCategories());
+		$this->load->view('adminProductsView', $data);
 	}
 
 	public function addProduct() {

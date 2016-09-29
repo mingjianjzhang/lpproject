@@ -6,8 +6,8 @@ $this->load->view("partials/adminNav");
 
 <div class="container">
 
-
 <?php var_dump($categories) ?>
+
 	<div class="row">
 		<div class="col-sm-6">
 			<form id="adminSearchProducts">
@@ -32,50 +32,19 @@ $this->load->view("partials/adminNav");
 				<th>Quantity Sold</th>
 				<th>Action</th>
 			</tr>
+			<?php foreach ($products as $product) { ?>
 			<tr>
-				<td><img width="50" height="50" src="/assets/img/product.gif"></td>
-				<td>1</td>
-				<td>Computer</td>
-				<td>100</td>
-				<td>10</td>
+				<td><img width="50" height="50" src="/assets/img/products/<?= $product['img']?>"></td>
+				<td><?= $product['id']?></td>
+				<td><?= $product['name']?></td>
+				<td><?= $product['inventory']?></td>
+				<td><?= $product['sold']?></td>
 				<td>
 					<a data-toggle="modal" data-target="#editAddProductModal">Edit</a>
 					<a href="">Delete</a>
 				</td>
 			</tr>
-			<tr>
-				<td><img width="50" height="50" src="/assets/img/product.gif"></td>
-				<td>1</td>
-				<td>Computer</td>
-				<td>100</td>
-				<td>10</td>
-				<td>
-					<a href="">Edit</a>
-					<a href="">Delete</a>
-				</td>
-			</tr>
-			<tr>
-				<td><img width="50" height="50" src="/assets/img/product.gif"></td>
-				<td>1</td>
-				<td>Computer</td>
-				<td>100</td>
-				<td>10</td>
-				<td>
-					<a href="">Edit</a>
-					<a href="">Delete</a>
-				</td>
-			</tr>
-			<tr>
-				<td><img width="50" height="50" src="/assets/img/product.gif"></td>
-				<td>1</td>
-				<td>Computer</td>
-				<td>100</td>
-				<td>10</td>
-				<td>
-					<a href="">Edit</a>
-					<a href="">Delete</a>
-				</td>
-			</tr>
+			<?php } ?>
 		</table>
 
 			<ul id="adminProductsPages" class="pages nav text-center">
