@@ -4,7 +4,7 @@
 	$this->load->view('partials/userHeader');
 ?>
 <body>
-<?php var_dump($this->session->cart) ?>
+
 	<div class="container">
 		<div class="col-md-12">
 			<?php if($this->session->cart == null){ ?>
