@@ -22,7 +22,7 @@ $this->load->view('partials/userHeader');
 			<div class="col-xs-6 col-md-3">
 				<a href="/UserProducts/displayProductsByCategory/2" class="thumbnail">
 				<h4 class="text-center">Food</h4>
-					<img src="/assets/img/products/cheez-it.jpg" alt="category image">
+					<img src="/assets/img/products/cheez-it1.jpg" alt="category image">
 				</a>
 			</div>
 			<div class="col-xs-6 col-md-3">
