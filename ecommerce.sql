@@ -1,1 +1,1 @@
-SELECT * FROM ecommerce.products;
+SELECT * FROM ecommerce.orders_products;

@@ -20,8 +20,6 @@ $this->load->view("partials/adminNav");
 				<li>asdf</li>
 			</ul>
 
-
-
 		</div>
 		<div class="col-sm-9">
 			<div class="row">
