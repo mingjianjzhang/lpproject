@@ -9,33 +9,30 @@ class AdminProducts extends CI_Controller {
 	}
 
 	public function index() {
-		$data = $this->Product->getCategories();
-		$this->load->view('adminProductsView', array("categories" => $data));
+		$data = array("products" => $this->Product->getAll(), "categories" => $this->Product->getCategories());
+		$this->load->view('adminProductsView', $data);
 	}
 
 	public function addProduct() {
 
-        $config['upload_path']          = './assets/img/products/';
-        $config['allowed_types']        = 'gif|jpg|png';
-        $config['max_size']             = 100;
-        $config['max_width']            = 1024;
-        $config['max_height']           = 768;       
-        $this->load->library('upload', $config);
-        $this->upload->do_upload('userfile');
-        $productInfo = $this->input->post();
-        $productInfo['img'] = $this->upload->data('file_name');
+		$config['upload_path']          = './assets/img/products/';
+		$config['allowed_types']        = 'gif|jpg|png';
+		$config['max_size']             = 100;
+		$config['max_width']            = 1024;
+		$config['max_height']           = 768;       
+		$this->load->library('upload', $config);
+		$this->upload->do_upload('userfile');
+		$productInfo = $this->input->post();
+		$productInfo['img'] = $this->upload->data('file_name');
 
-        var_dump($this->Product->addProduct($productInfo));
+		var_dump($this->Product->addProduct($productInfo));
 
-        $productID=$this->db->insert_id();
+		$productID=$this->db->insert_id();
         // $imageInfo = array("productID" => $productID, "src" => $this->upload->data('file_name'));
         // $this->Product->addImage($imageInfo);
 
 
 	}
-
-
-
 
 
 
