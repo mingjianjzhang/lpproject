@@ -3,7 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $this->load->view("partials/head");
 ?>
 <nav class="navbar navbar-default">
-	<div class="container">
+	
 		<div class="navbar-header">
 			<a class="navbar-brand" href="/dashboard">Dashboard</a>
 		</div>
@@ -16,5 +16,5 @@ $this->load->view("partials/head");
 				<li><a href="">Logout</a></li>
 			</ul>
 		</div>
-	</div>
+	
 </nav>

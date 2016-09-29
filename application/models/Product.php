@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Product extends CI_Model {
 	public function getAll() 
 	{
-		return $this->db->query("SELECT products.id, images.src AS img FROM products LEFT JOIN images ON products.id=images.product_id")->result_array();
+		return $this->db->query("SELECT products.id, images.src AS img FROM products LEFT JOIN images ON products.id=images.product_id AND images.is_main = 1")->result_array();
 	}
 	public function getItemDetails($id)
 	{
@@ -33,6 +33,12 @@ class Product extends CI_Model {
 			$results[$i]['children'] = $this->db->query("SELECT id, name FROM categories WHERE parent_id = {$results[$i]['id']}")->result_array();
 		}
 		return $results;
+	}
+
+	public function getProductsByCategory($categoryID) {
+		$query = "SELECT products.id, images.src as img, categories.id, parent_id FROM products LEFT JOIN images ON products.id = images.product_id AND images.is_main = 1 LEFT JOIN categories ON categories.id = products.category_id WHERE categories.id = $categoryID OR parent_id = $categoryID";
+		return $this->db->query($query)->result_array();
+
 	}
 
 }
