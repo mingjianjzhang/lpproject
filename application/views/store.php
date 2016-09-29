@@ -22,8 +22,10 @@ $this->load->view('partials/userHeader');
 					<?php foreach($parent['children'] as $child) { ?>
 					<a href="/getProductsByCategory/<?= $child['id'] ?>" class="list-group-item"><?= $child['name'] ?></a>
 					<?php } ?>
+					<a href="/getProductsByCategory/<?= $parent['id'] ?>"  class="list-group-item">All <?= $parent['category_name'] ?></a>
 				</div>
 				<?php } ?>
+				<a href="/store" class="list-group-item list-group-item-success" data-parent="#MainMenu">All Items</a>
 			</div>
 		</div>
 		
