@@ -15,7 +15,7 @@ class Product extends CI_Model {
 	}
 	public function getSimilarItems($id) 
 	{
-		$cat = $this->db->query("SELECT category_id FROM Products WHERE id = $id")->row_array();
+		$cat = $this->db->query("SELECT category_id FROM products WHERE id = $id")->row_array();
 		return $this->db->query("SELECT products.id id, name, price, images.src AS img FROM products JOIN images ON products.id=images.product_id WHERE category_id = {$cat['category_id']} AND products.id != $id")->result_array();
 	}
 	public function addImage($imageInfo) {
@@ -38,7 +38,7 @@ class Product extends CI_Model {
 	}
 
 	public function getProductsByCategory($categoryID) {
-		$query = "SELECT products.id, images.src as img, categories.id, parent_id FROM products LEFT JOIN images ON products.id = images.product_id AND images.is_main = 1 LEFT JOIN categories ON categories.id = products.category_id WHERE categories.id = $categoryID OR parent_id = $categoryID";
+		$query = "SELECT products.id as id, images.src as img, categories.id as cat_id, parent_id FROM products LEFT JOIN images ON products.id = images.product_id AND images.is_main = 1 LEFT JOIN categories ON categories.id = products.category_id WHERE categories.id = $categoryID OR parent_id = $categoryID";
 		return $this->db->query($query)->result_array();
 
 	}

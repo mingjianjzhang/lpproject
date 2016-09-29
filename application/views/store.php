@@ -3,7 +3,7 @@
 	$this->load->view('partials/head'); 
 	$this->load->view('partials/userHeader');
 ?>
-	<?php var_dump($categories) ?>
+
 <div class="container">
 	<div class="col-md-3 col-md-offset-1 outlined">
 		<form class="navbar-form navbar-left">
@@ -14,10 +14,10 @@
 		</form>
 		<h3>Categories</h3>
 		<?php foreach ($categories as $parent) { ?>
-			<h5><?= $parent['category_name'] ?></h5>
+			<h5><a href="/getProductsByCategory/<?= $parent['id'] ?>"><?= $parent['category_name'] ?></a></h5>
 			<ul class="subcategories">
 			<?php foreach($parent['children'] as $child) { ?>
-				<li><?= $child['name'] ?></li>
+				<li><a href="/getProductsByCategory/<?= $child['id'] ?>"><?= $child['name'] ?></a></li>
 			<?php } ?>
 			</ul>
 		<?php } ?>
@@ -28,7 +28,7 @@
 		<?php for ($i = 0; $i < count($products); $i++) { ?>
 		<div class="col-xs-6 col-md-4">
 			<a href="/product/<?= $products[$i]['id'] ?>" class="thumbnail">
-				<img src="assets/img/products/<?= $products[$i]['img'] ?>" alt="placeholder">
+				<img src="/assets/img/products/<?= $products[$i]['img'] ?>" alt="placeholder">
 			</a>
 		</div>
 		<?php if (($i != 0) && (($i+1)%3 == 0)) { ?>

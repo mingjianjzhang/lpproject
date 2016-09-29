@@ -16,7 +16,9 @@ class UserProducts extends CI_Controller {
 	}
 
 	public function displayProductsByCategory($id) {
-
+		$this->load->model('Product');
+		$data = array('categories' => $this->Product->getCategories(), 'products' => $this->Product->getProductsByCategory($id));
+		$this->load->view('store', $data);
 	}
 }
 
