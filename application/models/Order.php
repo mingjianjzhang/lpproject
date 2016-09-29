@@ -27,4 +27,9 @@ class Order extends CI_Model {
 		$this->db->query($sql, $values);
 		// adjust inventory
 	}
+	public function getAllOrders()
+	{
+		return $this->db->query("SELECT orders.id, users.first_name, users.last_name, orders.created_at, street, city, state, zip FROM orders JOIN users ON orders.user_id=users.id JOIN billing ON users.billing_id=billing.id JOIN addresses ON billing_address_id=addresses.id")->result_array();
+	}
+
 }

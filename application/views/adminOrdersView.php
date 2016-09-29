@@ -32,12 +32,13 @@ $this->load->view("partials/adminNav");
 				<th>Total</th>
 				<th>Status</th>
 			</tr>
+			<?php foreach ($orders as $order) { ?>
 			<tr>
-				<td><a href="/dashboard/orders/show/100">100</a></td>
-				<td>Josh</td>
-				<td>09/30/2016</td>
-				<td>123 street st, CA 92801</td>
-				<td>$145.99</td>
+				<td><a href="/dashboard/orders/show/<?=$order['id']?>"><?=$order['id']?></a></td>
+				<td><?=$order['first_name']?> <?=$order['last_name']?></td>
+				<td><?=$order['id']?></td>
+				<td><?=$order['street']?> <?=$order['city']?> <?=$order['state']?> <?=$order['zip']?></td>
+				<td>need to calculate total</td>
 				<td>
 					<select name="status" class="form-control">
 						<option>Show All</option>
@@ -48,6 +49,7 @@ $this->load->view("partials/adminNav");
 					</select>
 				</td>
 			</tr>
+			<?php } ?>
 		</table>
 	</div>
 
