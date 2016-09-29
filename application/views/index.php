@@ -12,7 +12,7 @@ $this->load->view('partials/userHeader');
 			<p><a class="btn btn-default btn-lg" href="store" role="button">Shop All Products</a></p>
 		</div>
 		<div class="row">
-			<h3>Or shop a category:</h3>
+			<h3>Or shop by category:</h3>
 			<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
 				<div class="hovereffect">
 					<img class="thumbnail dropshadow" src="/assets/img/electronics-cat.jpg" height="240" alt="category image">

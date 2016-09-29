@@ -17,7 +17,7 @@ $this->load->view('partials/userHeader');
 		<div id="MainMenu">
 			<div class="list-group panel">
 				<?php foreach ($categories as $parent) { ?>
-				<a href="#<?= $parent['category_name'] ?>" class="list-group-item list-group-item-success" data-toggle="collapse" data-parent="#MainMenu"><?= $parent['category_name'] ?><i class="fa fa-caret-down"></i></a>
+				<a href="#<?= $parent['category_name'] ?>" class="list-group-item list-group-item-info" data-toggle="collapse" data-parent="#MainMenu"><?= $parent['category_name'] ?><i class="fa fa-caret-down"></i></a>
 				<div class="collapse" id="<?= $parent['category_name'] ?>">
 					<?php foreach($parent['children'] as $child) { ?>
 					<a href="/getProductsByCategory/<?= $child['id'] ?>" class="list-group-item"><?= $child['name'] ?></a>
@@ -25,7 +25,7 @@ $this->load->view('partials/userHeader');
 					<a href="/getProductsByCategory/<?= $parent['id'] ?>"  class="list-group-item">All <?= $parent['category_name'] ?></a>
 				</div>
 				<?php } ?>
-				<a href="/store" class="list-group-item list-group-item-success" data-parent="#MainMenu">All Items</a>
+				<a href="/store" class="list-group-item list-group-item-info" data-parent="#MainMenu">All Items</a>
 			</div>
 		</div>
 		

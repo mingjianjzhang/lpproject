@@ -108,7 +108,7 @@
 					</div>
 					<div class="input-group clear-bottom"> 
 						<span class="input-group-addon" id="basic-addon1">Expiration:</span>
-						<div class="col-xs-3">
+						<div class="col-xs-5">
 							<select class="form-control col-sm-2" name="expiry-month" id="expiry-month">
 								<option>Month</option>
 								<option value="01">Jan (01)</option>
@@ -127,6 +127,7 @@
 						</div>
 						<div class="col-xs-3">
 							<select class="form-control" name="expiry-year">
+								<option>Year</option>
 								<option value="2016">2016</option>
 								<option value="2017">2017</option>
 								<option value="2018">2018</option>
