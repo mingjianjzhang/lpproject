@@ -17,8 +17,8 @@ class Product extends CI_Model {
 	}
 	public function getSimilarItems($id) 
 	{
-		$cat = $this->db->query("SELECT category_id FROM products WHERE id = $id")->row_array();
-		return $this->db->query("SELECT products.id id, name, price, images.src AS img FROM products JOIN images ON products.id=images.product_id WHERE category_id = {$cat['category_id']} AND products.id != $id")->result_array();
+		$cat = $this->db->query("SELECT parent_id FROM categories JOIN products ON products.category_id = categories.id WHERE products.id = $id")->row_array();
+		return $this->db->query("SELECT products.id id, products.name, price, images.src AS img FROM products JOIN images ON products.id=images.product_id JOIN categories ON products.category_id=categories.id WHERE parent_id = {$cat['parent_id']} AND products.id != $id")->result_array();
 	}
 	public function addImage($imageInfo) {
 		$query = "INSERT INTO images (product_id, src, is_main, created_at, updated_at) VALUES(?, ?, 1, now(), now())";

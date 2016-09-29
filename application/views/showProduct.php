@@ -16,10 +16,12 @@ $this->load->view('partials/userHeader');
 				<img class="img-rounded col-md-12"  src="/assets/img/products/<?= $info['img']?>">
 				<div class="row">
 					<ul class="inline-list">
+
+					<!-- need to set this up to get all other images -->
+<!-- 					<?php foreach ($pictures as $picture) { ?> 
 						<li><a href="#"><img src="/assets/img/products/<?= $info['img']?>1" width="90" data-toggle="modal" data-target="#showPic" id="1"></a></li>
-						<li><a href="#"><img src="/assets/img/products/<?= $info['img']?>2" width="90" data-toggle="modal" data-target="#showPic" id="2"></a></li>
-						<li><a href="#"><img src="/assets/img/products/<?= $info['img']?>3" width="90" data-toggle="modal" data-target="#showPic" id="3"></a></li>
-						<li><a href="#"><img src="/assets/img/products/<?= $info['img']?>4" width="90" data-toggle="modal" data-target="#showPic" id="4"></a></li>
+						<?php } ?> -->
+
 					</ul>
 				</div>
 			</div>
