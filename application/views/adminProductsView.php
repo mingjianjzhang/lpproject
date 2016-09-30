@@ -5,18 +5,16 @@ $this->load->view("partials/adminNav");
 
 <div class="container">
 
-	<div class="row"> 
+	<div class="row" style="margin-bottom: 1em"> 
 		<div class="col-sm-6">
-			<form id="adminSearchProducts">
+<!-- 			<form id="adminSearchProducts">
 				<div class="form-group">
 					<input type="text" class="form-control" id="adminProductSearch" placeholder="Search">
 				</div>
-			</form>
+			</form> -->
 		</div>
 		<div class="col-sm-6">
-<form id="hello">
-	<input type="hidden" name="key" value="value">
-</form>
+
 			<a class="addEdit btn btn-default btn-primary pull-right" product-id="0" data-toggle="modal" data-target="#editAddProductModal"> Add new product </a>
 		</div>
 	</div>

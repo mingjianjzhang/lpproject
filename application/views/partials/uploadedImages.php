@@ -22,8 +22,8 @@
     	})
     })
 </script>
-	<?php var_dump($product) ?>
 	<table id="adminProductImageUpload" class="table">
+		<?php var_dump($tempImages) ?>
 		<?php 
 		if($product != "add") {
 			foreach ($product['images'] as $image) { ?>
@@ -43,6 +43,7 @@
 		<?php } ?>
 		<?php } else {
 			foreach ($tempImages as $image) { ?>
+
 		<tr>
 			<td><img width="50" height="50" src="/assets/img/products/<?= $image['src'] ?>"></td>
 			<td><p><?= $image['src'] ?></p></td>
@@ -54,7 +55,7 @@
 			<td>
 				<div class="checkbox">
 				    <label>
-				      <input class="imageCheck" name="image" value="<?= $image['id'] ?>" type="checkbox" <?= ($image['is_main']) ? "checked" : "disabled" ?>>Main
+				      <input class="imageCheck" name="image" value="<?= $image['id'] ?>" type="checkbox" <?= ($image['is_main'] == 2) ? "checked" : "disabled" ?>>Main
 				    </label>
 			  </div>
 			</td>
@@ -62,6 +63,7 @@
 		<?php } ?>
 		<?php } ?>
 	</table>
+	</form>
 	<form id="uploadImage" action="/AdminProducts/uploadImage" method="post" target="_blank" enctype="multipart/form-data">
 		<input id="productID" type="hidden" name="productID" value="<?= ($product == 'add') ? 9999 : $product['id'] ?>">
 		<label id="fileLabel" for="userfile"> Images </label>

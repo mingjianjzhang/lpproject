@@ -33,7 +33,7 @@ class Product extends CI_Model {
 	public function getSimilarItems($id) 
 	{
 		$cat = $this->db->query("SELECT parent_id FROM categories JOIN products ON products.category_id = categories.id WHERE products.id = $id")->row_array();
-		return $this->db->query("SELECT products.id id, products.name, price, images.src AS img FROM products JOIN images ON products.id=images.product_id JOIN categories ON products.category_id=categories.id WHERE parent_id = {$cat['parent_id']} AND products.id != $id")->result_array();
+		return $this->db->query("SELECT products.id id, products.name, price, images.src AS img FROM products JOIN images ON products.id=images.product_id JOIN categories ON products.category_id=categories.id WHERE parent_id = {$cat['parent_id']} AND products.id != $id LIMIT 3")->result_array();
 	}
 	public function linkImage($imageID, $productID) {
 		$this->db->query("UPDATE images SET product_id = $productID, is_main = 1 WHERE id = $imageID");
@@ -98,6 +98,17 @@ class Product extends CI_Model {
 	}
 	public function deleteProduct($id) {
 		$this->db->query("DELETE FROM products WHERE id = $id");
+	}
+	public function editProduct($productInfo) {
+		$query = "UPDATE products SET name=? , price=?, inventory=?, description = ?, category_id = ? WHERE id = ?";
+		$values = array($productInfo['name'],$productInfo['price'], $productInfo['inventory'], $productInfo['description'], $productInfo['category'], $productInfo['product_id']);
+		$this->db->query($query, $values);
+		$query = "UPDATE images set is_main = 0 WHERE product_id = {$productInfo['product_id']}";
+		$this->db->query($query);
+		$query = "UPDATE images SET is_main = 1 WHERE product_id = ? AND id = ?";
+		$values = array($productInfo['product_id'], $productInfo['image']); 
+		$this->db->query($query, $values);
+
 	}
 
 }

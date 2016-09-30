@@ -23,7 +23,7 @@
 			</div><!-- /.navbar-collapse -->
 		</div><!-- /.container-fluid -->
 	</nav>
-
+ 
 
 	<div id="adminlogin" class="modal fade" role="dialog">
 		<div class="modal-dialog">
@@ -33,7 +33,7 @@
 					<h4 class="modal-title">Please enter your admin username and password:</h4>
 				</div>
 				<div class="modal-body">
-					<form action="/AdminOrders" method="post">
+					<form action="/dashboard" method="post">
 						Admin: <input type="text" name="name">
 						Password: <input type="password" name="password">
 						<input type="submit" class="btn btn-default" value="Login">

@@ -71,4 +71,10 @@ class Order extends CI_Model {
 			limit 4";
 		return $this->db->query($query)->result_array();
 	}
+
+
+	public function updateStatus($statusID, $orderID) {
+		$query = "UPDATE orders SET status = $statusID WHERE id=$orderID";
+		$this->db->query($query);
+	}
 }

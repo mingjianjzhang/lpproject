@@ -17,14 +17,30 @@ $('#adminCategorySelect').select2({
   }
 });
 
+		$('#addingProduct').click(function(e){
+			e.preventDefault();
 
+			$.post('/AdminProducts/addProduct', $('#addsProduct').serialize(), function(res) {
+ 		$('#submittedInfo').html("<h5 class='bg-success'>You have successfully added a product</h5>");
+			})
 
-$('#addingProduct').click(function(e){
-	e.preventDefault();
-	$.post("/AdminProducts/addProduct", $('#productInformation').serialize(), function(res) {
-		$('#submittedInfo').html("<h5 class='bg-success'>You have successfully added a product</h5>");
-	})
-})	
+		})		
+		$('#editingProduct').click(function(e){
+			e.preventDefault();
+
+			$.post('/AdminProducts/editProduct', $('#editsProduct').serialize(), function(res) {
+ 		$('#submittedInfo').html("<h5 class='bg-success'>You have successfully edited a product</h5>");
+			})
+
+		})		
+		
+
+// $('#addingProduct').click(function(e){
+// 	e.preventDefault();
+// 	$.post("/AdminProducts/addProduct", $('#productInformation').serialize(), function(res) {
+// 		$('#submittedInfo').html("<h5 class='bg-success'>You have successfully added a product</h5>");
+// 	})
+// })	
 
 
 </script>
@@ -34,10 +50,11 @@ $('#addingProduct').click(function(e){
 			</div>
 
 			<div class="modal-body">
-
+	<?php var_dump($product) ?>
 				<div id="submittedInfo"></div>
 					<!-- <form id="productInformation">	 -->
-					<form action="/AdminProducts/addProduct" method="POST">
+					<form id="<?= ($product == "add") ? "addsProduct" : "editsProduct" ?>" method="POST">
+					<input type="hidden" name="product_id" value=<?= ($product != "add") ? $product['id'] : NULL ?>>
 					<div class="form-group">
 						<label for="name">Name</label>
 						<input class="form-control" type="text" name="name" id="name" value="<?= ($product != 'add') ? $product['name'] : NULL ?>">
@@ -76,7 +93,7 @@ $('#addingProduct').click(function(e){
 							</div>
 						</div>
 					</div>
-					</form>
+					
 					<div id="productImageUpload">
 						<?php $this->load->view('partials/uploadedImages', array("product" => $product, "tempImages" => $tempImages)); ?>
 

@@ -48,14 +48,22 @@ class UserOrders extends CI_Controller {
 	}
 
 	public function cartKill() {
+		$this->load->model('Order');
+		$post = $this->input->post();
+		// var_dump($post);
+		// die();
+		$this->Order->processOrder($post);
 		$this->session->sess_destroy();
 		redirect('UserOrders/shoppingCart');
 	}
-	public function pay() {
+
+	public function updateOrder() {
 		$this->load->model('Order');
-		$post = $this->input->post();
-		$this->Order->processOrder($post);
+
+		$this->Order->updateStatus($this->input->post('status'), $this->input->post('orderID'));
+
 	}
+	
 
 }
 

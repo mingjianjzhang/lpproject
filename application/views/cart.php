@@ -7,12 +7,12 @@ $this->load->view('partials/userHeader');
 
 	<script>
 		$(document).ready(function(){
-			$('#pay').click(function(){
-				$.post('/empty', function(res) {
-					$('#success').html('<h2>Thanks for your order!</h2><a href="/store"><button href="/store" class="btn btn-success">Continue Shopping</button></a>');
-				});
-				return false;
-			});
+			// $('#pay').click(function(){
+			// 	$.post('/empty', function(res) {
+			// 		$('#success').html('<h2>Thanks for your order!</h2><a href="/store"><button href="/store" class="btn btn-success">Continue Shopping</button></a>');
+			// 	});
+			// 	return false;
+			// });
 			$("#same_as_billing").click(function(){
 				if($(this).is(":checked")) {
 					$("[name='billFirstName']").val($("[name='shipFirstName']").val());
@@ -80,7 +80,7 @@ $this->load->view('partials/userHeader');
 		</div>
 		<div class="col-md-5 col-md-offset-1">
 			<h1>Shipping Information</h1>
-			<form class="form-horizontal" method="post">
+			<form action="/UserOrders/cartkill" class="form-horizontal" method="post">
 				<input type="hidden" name="numProducts" value=<?= count($this->session->cart) ?>>
 				<?php for ($i = 0; $i < count($this->session->cart); $i++) { ?>
 				<input type="hidden" name="product_id<?= $i ?>" value="<?= $this->session->cart[$i]['id'] ?>">

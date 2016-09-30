@@ -23,12 +23,26 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.0/jquery-ui.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/js/select2.js"></script>
 	<script src="/assets/js/app.js"></script>
-
+	
 
 	<!-- Bootstrap JS -->
 
 	<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<script>
+	$(document).ready(function(){
+
+
+		$('.status').change(function() {
+			console.log($(this).parents('form'));
+			$.post('/UserOrders/updateOrder', $(this).parents('form').serialize(), function(res) {
+
+			});
+	
+		})
+
+
+		
+	})
 
 		 
 
