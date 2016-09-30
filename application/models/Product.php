@@ -8,6 +8,14 @@ class Product extends CI_Model {
 		return $this->db->query("SELECT products.id, images.src AS img, products.name, inventory, SUM(quantity) as sold FROM products LEFT JOIN images ON products.id=images.product_id AND images.is_main = 1 LEFT JOIN orders_products ON products.id = orders_products.product_id GROUP BY products.id")->result_array();
 
 	}
+	public function getInventory($data)
+	{
+		$inCart = [];
+		foreach ($data as $cart) {
+			array_push($inCart, $cart['id']);
+		}
+		return $this->db->query("SELECT id, inventory FROM products")->result_array(); // WHERE id IN ('$inCart') ???
+	}
 	public function getItemDetails($id)
 	{
 		$sql="SELECT products.id as id, name, price, images.src AS img, description, inventory FROM products JOIN images ON products.id=images.product_id WHERE products.id = $id AND is_main = 1";

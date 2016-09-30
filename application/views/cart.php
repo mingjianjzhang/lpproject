@@ -41,15 +41,32 @@ $this->load->view('partials/userHeader');
 						<th>Quantity</th>
 						<th>Total</th>
 					</tr>
-					<?php  foreach ($this->session->cart as $item) { ?>
+					<?php  $cart = $this->session->cart; for ($i=0; $i<count($cart); $i++) { ?>
 					<tr>
-						<td><?= $item['name'] ?></td>
-						<td>$<?= $item['price'] ?></td> 
-						<td><?= $item['quantity'] ?> <a href="">Update</a><img src="/assets/img/trash.png" width="25"></td>
-						<td>$<?= $item['price']*$item['quantity'] ?></td>
+						<td><?= $cart[$i]['name'] ?></td>
+						<td>$<?= $cart[$i]['price'] ?></td> 
+						<td>
+							<form action="/UserOders/update" method="post" class="form-inline">
+								<input type="hidden" name="price" value="<?= $cart[$i]['price'] ?>">
+								<input type="hidden" name="name" value="<?= $cart[$i]['name'] ?>">
+								<input type="hidden" name="id" value="<?= $cart[$i]['id'] ?>">
+								<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+									<?= $cart[$i]['quantity'] ?> (<?= $cart[$i]['price'] ?>)
+									<span class="caret"></span>
+								</button>
+								<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+
+									<!-- <?php for ($j=1; $j<=$cart[$i]['inventory']; $j++) { ?>
+									<li><?= $i ?>"><a href="#"><?= $i ?> ($<?= $i * $cart[$i]['price'] ?>)</a></li> 
+									<?php } ?> -->
+
+								</ul>
+							<a href=""><img src="/assets/img/trash.png" width="25"></a>
+							</form>
+						<td>$<?= $cart[$i]['price']*$cart[$i]['quantity'] ?></td>
+						</td>
 					</tr>
 					<?php } ?>
-
 				</table>
 				<?php $cash = 0; for ($i = 0; $i < count($this->session->cart); $i++) {
 					$cash += ($this->session->cart[$i]['price']*$this->session->cart[$i]['quantity']);
@@ -57,7 +74,7 @@ $this->load->view('partials/userHeader');
 				<h4 class="pull-right">Total: <?= $cash ?></h4>	
 				<a href="/empty"><button class="btn btn-danger">Empty Cart</button></a>
 				<?php }?>
-			<a href="/store"><button href="/store" class="btn btn-success">Continue Shopping</button></a>
+				<a href="/store"><button href="/store" class="btn btn-success">Continue Shopping</button></a>
 			</div>	
 		</div>
 		<div class="col-md-5 col-md-offset-1">

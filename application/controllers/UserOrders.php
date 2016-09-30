@@ -33,7 +33,18 @@ class UserOrders extends CI_Controller {
 	}
 
 	public function shoppingCart() {
+		$this->load->model('Product');
+		$inventory = $this->Product->getInventory($this->session->cart); // to bring over product inventory numbers to cart page
 		$this->load->view('cart');
+	}
+
+	public function update($rowid) // for cart update functionality
+	{
+		$data=$this->cart->update(array(
+			'rowid'=>$rowid,
+			'qty'=> $this->input->post('quantity')));
+		$this->cart->update($data);  
+		redirect('cart/shipping');
 	}
 
 	public function cartKill() {
