@@ -45,7 +45,8 @@ $this->load->view('partials/userHeader');
 					<tr>
 						<td><?= $cart[$i]['name'] ?></td>
 						<td>$<?= $cart[$i]['price'] ?></td> 
-						<td>
+						<td><?= $cart[$i]['quantity'] ?></td> 
+		<!-- 				<td>
 							<form action="/UserOders/update" method="post" class="form-inline">
 								<input type="hidden" name="price" value="<?= $cart[$i]['price'] ?>">
 								<input type="hidden" name="name" value="<?= $cart[$i]['name'] ?>">
@@ -56,15 +57,15 @@ $this->load->view('partials/userHeader');
 								</button>
 								<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
 
-									<!-- <?php for ($j=1; $j<=$cart[$i]['inventory']; $j++) { ?>
+									<?php for ($j=1; $j<=$cart[$i]['inventory']; $j++) { ?>
 									<li><?= $i ?>"><a href="#"><?= $i ?> ($<?= $i * $cart[$i]['price'] ?>)</a></li> 
-									<?php } ?> -->
+									<?php } ?>
 
 								</ul>
 							<a href=""><img src="/assets/img/trash.png" width="25"></a>
 							</form>
+						</td> -->
 						<td>$<?= $cart[$i]['price']*$cart[$i]['quantity'] ?></td>
-						</td>
 					</tr>
 					<?php } ?>
 				</table>
