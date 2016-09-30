@@ -111,7 +111,7 @@ CREATE TABLE `images` (
   `updated_at` datetime DEFAULT NULL,
   `is_main` tinyint(4) DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=10000 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -120,7 +120,7 @@ CREATE TABLE `images` (
 
 LOCK TABLES `images` WRITE;
 /*!40000 ALTER TABLE `images` DISABLE KEYS */;
-INSERT INTO `images` VALUES (1,1,'algorithm1.jpg','0000-00-00 00:00:00','0000-00-00 00:00:00',1),(2,2,'andy1.jpg','0000-00-00 00:00:00','0000-00-00 00:00:00',1),(3,3,'ballchair1.jpg','0000-00-00 00:00:00','0000-00-00 00:00:00',1),(4,4,'basketball1.jpg','0000-00-00 00:00:00','0000-00-00 00:00:00',1),(5,5,'bluechair1.jpg',NULL,NULL,1),(6,6,'bluecouch1.jpg',NULL,NULL,1),(7,7,'bookshelf1.jpg',NULL,NULL,1),(8,8,'bookshelfsmall1.jpg',NULL,NULL,1),(9,9,'chair1.jpg',NULL,NULL,1),(10,10,'computerstand1.jpg',NULL,NULL,1),(11,11,'fruit1.jpg',NULL,NULL,1),(12,12,'markers1.jpg',NULL,NULL,1),(13,13,'microwave1.jpg',NULL,NULL,1),(14,14,'pingpong1.jpg',NULL,NULL,1),(15,15,'projector1.jpg',NULL,NULL,1),(16,16,'refrigerator1.jpg',NULL,NULL,1),(17,17,'refrigerator2.jpg',NULL,NULL,1),(18,18,'chrisb.jpeg',NULL,NULL,1),(19,19,'blackbelt.jpg',NULL,NULL,1),(20,20,'cheez-it1.jpg','0000-00-00 00:00:00','0000-00-00 00:00:00',1),(22,22,'sunChips1.jpg','0000-00-00 00:00:00','0000-00-00 00:00:00',1),(23,23,'fruit-snacks.jpg','0000-00-00 00:00:00','0000-00-00 00:00:00',1),(24,24,'trail-mix.jpg','0000-00-00 00:00:00','0000-00-00 00:00:00',1),(25,25,'candy1.jpg','0000-00-00 00:00:00','0000-00-00 00:00:00',1),(26,26,'popcorn1.jpg','0000-00-00 00:00:00','0000-00-00 00:00:00',1);
+INSERT INTO `images` VALUES (1,1,'algorithm1.jpg','0000-00-00 00:00:00','0000-00-00 00:00:00',1),(2,2,'andy1.jpg','0000-00-00 00:00:00','0000-00-00 00:00:00',1),(3,3,'ballchair1.jpg','0000-00-00 00:00:00','0000-00-00 00:00:00',1),(4,4,'basketball1.jpg','0000-00-00 00:00:00','0000-00-00 00:00:00',1),(5,5,'bluechair1.jpg',NULL,NULL,1),(6,6,'bluecouch1.jpg',NULL,NULL,1),(7,7,'bookshelf1.jpg',NULL,NULL,1),(8,8,'bookshelfsmall1.jpg',NULL,NULL,1),(9,9,'chair1.jpg',NULL,NULL,1),(10,10,'computerstand1.jpg',NULL,NULL,1),(11,11,'fruit1.jpg',NULL,NULL,1),(12,12,'markers1.jpg',NULL,NULL,1),(13,13,'microwave1.jpg',NULL,NULL,1),(14,14,'pingpong1.jpg',NULL,NULL,1),(15,15,'projector1.jpg',NULL,NULL,1),(16,16,'refrigerator1.jpg',NULL,NULL,1),(17,17,'refrigerator2.jpg',NULL,NULL,1),(18,18,'chrisb.jpeg',NULL,NULL,1),(19,19,'blackbelt.jpg',NULL,NULL,1),(20,20,'cheez-it1.jpg','0000-00-00 00:00:00','0000-00-00 00:00:00',1),(22,22,'sunChips1.jpg','0000-00-00 00:00:00','0000-00-00 00:00:00',1),(23,23,'fruit-snacks.jpg','0000-00-00 00:00:00','0000-00-00 00:00:00',1),(24,24,'trail-mix.jpg','0000-00-00 00:00:00','0000-00-00 00:00:00',1),(25,25,'candy1.jpg','0000-00-00 00:00:00','0000-00-00 00:00:00',1),(26,26,'popcorn1.jpg','0000-00-00 00:00:00','0000-00-00 00:00:00',1),(9999,9999,'placeholder-thumb.jpg',NULL,NULL,2);
 /*!40000 ALTER TABLE `images` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -244,4 +244,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-09-30  9:17:50
+-- Dump completed on 2016-09-30 12:25:35
