@@ -13,6 +13,16 @@ $this->load->view('partials/userHeader');
 				});
 				return false;
 			});
+			$("#same_as_billing").click(function(){
+				if($(this).is(":checked")) {
+					$("[name='billFirstName']").val($("[name='shipFirstName']").val());
+					$("[name='billLastName']").val($("[name='shipLastName']").val());
+					$("[name='billStreet']").val($("[name='shipStreet']").val());
+					$("[name='billCity']").val($("[name='shipCity']").val());
+					$("[name='billState']").val($("[name='shipState']").val());
+					$("[name='billZip']").val($("[name='shipZip']").val());
+				}
+			});
 		});
 	</script>
 
@@ -86,7 +96,7 @@ $this->load->view('partials/userHeader');
 			<div class="col-md-5">
 				<h1>Billing Information</h1>
 				<p><input type="hidden" value="notSame" name="isSame">
-					<input type="checkbox" value="same" name="isSame"> Same as shipping</p>
+					<label><input type="checkbox" value="same" name="isSame" id="same_as_billing"> Same as shipping</label></p>
 					<div class="input-group clear-bottom">
 						<span class="input-group-addon" id="basic-addon1">First Name:</span>
 						<input type="text" class="form-control" name="billFirstName" placeholder="First Name" aria-describedby="basic-addon1">
