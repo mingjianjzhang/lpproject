@@ -18,7 +18,7 @@ class Product extends CI_Model {
 	}
 	public function getItemDetails($id)
 	{
-		$sql="SELECT products.id as id, name, price, images.src AS img, description, inventory FROM products LEFT JOIN images ON products.id=images.product_id WHERE products.id = $id AND is_main = 1 OR is_main = 2";
+		$sql="SELECT products.id as id, name, category_id, price, images.src AS img, description, inventory FROM products LEFT JOIN images ON products.id=images.product_id WHERE products.id = $id AND is_main = 1 OR is_main = 2";
 		$result = $this->db->query($sql)->row_array();
 		$result['images'] = $this->db->query("SELECT * FROM images WHERE product_id = {$result['id']}")->result_array();
 		return $result;

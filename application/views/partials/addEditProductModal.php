@@ -51,6 +51,7 @@ $('#adminCategorySelect').select2({
 
 			<div class="modal-body">
 
+
 				<div id="submittedInfo"></div>
 					<!-- <form id="productInformation">	 -->
 					<form id="<?= ($product == "add") ? "addsProduct" : "editsProduct" ?>" method="POST">
