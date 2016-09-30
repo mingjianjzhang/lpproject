@@ -28,7 +28,10 @@ class Welcome extends CI_Controller {
 	}
 
 	public function adminDashboard() {
-		$this->load->view('adminDashView');
+		$this->load->model('Order');
+		$data = $this->Order->getAllOrdersLimited();
+		$top = $this->Order->topProducts();
+		$this->load->view('adminDashView', array('orders' => $data, 'products' => $top ));
 	}
 
 }
