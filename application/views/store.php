@@ -20,28 +20,18 @@ $this->load->view('partials/userHeader');
 				<a href="#<?= $parent['category_name'] ?>" class="list-group-item list-group-item-success" data-toggle="collapse" data-parent="#MainMenu"><?= $parent['category_name'] ?><i class="fa fa-caret-down"></i></a>
 				<div class="collapse" id="<?= $parent['category_name'] ?>">
 					<?php foreach($parent['children'] as $child) { ?>
-					<a href="/getProductsByCategory/<?= $child['id'] ?>" class="list-group-item"><?= $child['name'] ?></a>
+					<a href="/getProductsByCategory/<?= $child['id'] ?>" class="categorySearch list-group-item" category-id="<?= $child['id'] ?>"><?= $child['name'] ?></a>
 					<?php } ?>
-					<a href="/getProductsByCategory/<?= $parent['id'] ?>"  class="list-group-item">All <?= $parent['category_name'] ?></a>
+					<a href="/getProductsByCategory/<?= $parent['id'] ?>"  class="categorySearch list-group-item" category-id="<?= $parent['id'] ?>">All <?= $parent['category_name'] ?></a>
 				</div>
 				<?php } ?>
-				<a href="/store" class="list-group-item list-group-item-success" data-parent="#MainMenu">All Items</a>
+				<a href="" class="categorySearch list-group-item list-group-item-success" data-parent="#MainMenu" category-id="0">All Items</a>
 			</div>
 		</div>
 		
 	</div>
-	<div class="col-md-6 col-xs-12 col-md-offset-1 outlined">
-		<div class="row">
-			<?php for ($i = 0; $i < count($products); $i++) { ?>
-			<div class="col-xs-6 col-md-4">
-				<a href="/product/<?= $products[$i]['id'] ?>" class="thumbnail">
-					<img src="/assets/img/products/<?= $products[$i]['img'] ?>" alt="<?= $products[$i]['img'] ?>">
-				</a>
-			</div>
-			<?php if (($i != 0) && (($i+1)%3 == 0)) { ?>
-		</div>
-		<div class="row">
-			<?php } ?>
-			<?php } ?>
-		</div>
+
+
+<div id="viewingProducts" class="col-md-6 col-xs-12 col-md-offset-1">
+
 	</div>

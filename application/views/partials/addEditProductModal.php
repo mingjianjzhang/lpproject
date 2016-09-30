@@ -17,17 +17,14 @@ $('#adminCategorySelect').select2({
   }
 });
 
-$('.imageCheck').change(function() {
-	if ($('.imageCheck').is(':checked')) {
-		$('.imageCheck').not(this).prop('disabled', true);
-	} else {
-		$('.imageCheck').not(this).prop('disabled', false);
-	}
-});
 
 
-	
-
+$('#addingProduct').click(function(e){
+	e.preventDefault();
+	$.post("/AdminProducts/addProduct", $('#productInformation').serialize(), function(res) {
+		$('#submittedInfo').html("<h5 class='bg-success'>You have successfully added a product</h5>");
+	})
+})	
 
 
 </script>
@@ -37,8 +34,10 @@ $('.imageCheck').change(function() {
 			</div>
 
 			<div class="modal-body">
-				<?php var_dump($product) ?>
-						
+
+				<div id="submittedInfo"></div>
+					<!-- <form id="productInformation">	 -->
+					<form action="/AdminProducts/addProduct" method="POST">
 					<div class="form-group">
 						<label for="name">Name</label>
 						<input class="form-control" type="text" name="name" id="name" value="<?= ($product != 'add') ? $product['name'] : NULL ?>">
@@ -77,40 +76,16 @@ $('.imageCheck').change(function() {
 							</div>
 						</div>
 					</div>
-						<form action="/AdminProducts/uploadImage" method="post" enctype="multipart/form-data">
-							<label id="fileLabel" for="userfile"> Images </label>
-							<input class="form-control" id="userfile" type="file" name="userfile" size="20" />
-							<button type="submit" class="btn btn-success">Upload</button>	
-						</form>
+					</form>
+					<div id="productImageUpload">
+						<?php $this->load->view('partials/uploadedImages', array("product" => $product, "tempImages" => $tempImages)); ?>
 
 
 
 				
-					<div>
-						<table id="adminProductImageUpload" class="table">
-							<?php 
-							if($product != "add") {
-								foreach ($product['images'] as $image) { ?>
-							
-							<tr>
-								<td><img width="50" height="50" src="/assets/img/products/<?= $image['src'] ?>"></td>
-								<td><p><?= $image['src'] ?></p></td>
-								<td><p><span class="glyphicon glyphicon-trash"></span></p></td>
-								<td>
-									<div class="checkbox">
-									    <label>
-									      <input class="imageCheck" type="checkbox" <?= ($image['is_main']) ? "checked" : "disabled" ?>>
-									    </label>
-								  </div>
-								</td>
-							</tr>
-							<?php } ?>
-							<?php } ?>
-						</table>
-							
-					</div>
-					<a class="btn btn-default" href=""> Cancel </a>
-					<a class="btn btn-info" href=""> Preview </a>
-					<a class="btn btn-primary" href=""> Update </a>
+					
+					 
 
 			</div>
+			<a class="btn btn-default" data-dismiss="modal" href=""> Cancel </a>
+					<a class="btn btn-primary" id="<?= ($product == "add") ? "addingProduct" : "editingProduct" ?>"><?= ($product == "add") ? "Add" : "Update" ?></a>

@@ -53,12 +53,18 @@ $route['default_controller'] = 'welcome';
 $route['store'] = 'UserProducts';
 $route['cart'] = 'UserOrders';
 $route['product/(:num)'] = 'UserProducts/viewProduct/$1';
+$route['refresh/(:num)'] = 'AdminProducts/refresh/$1';
+$route['deleteImage/(:num)/(:num)'] = "AdminProducts/deleteImage/$1/$2"
+;
+$route['deleteProduct/(:num)'] = "AdminProducts/deleteProduct/$1";
 // $route['']
 $route['dashboard'] = 'welcome/adminDashboard';
 $route['dashboard/products'] = 'AdminProducts';
 $route['dashboard/orders'] = 'AdminOrders';
 $route['dashboard/orders/show/(:num)'] = 'AdminOrders/showOrder/$1';
 $route['getProductsByCategory/(:num)'] =  'UserProducts/displayProductsByCategory/$1'; 
+$route['updateDisplay/(:num)/(:num)'] =  'UserProducts/paginate/$1/$2'; 
+$route['paginate/(:num)/(:num)'] =  'UserProducts/paginate/$1/$2'; 
 $route['addToCart'] = 'UserOrders/purchase';
 $route['goToCart'] = 'UserOrders/shoppingCart';
 $route['empty'] = 'UserOrders/cartKill';

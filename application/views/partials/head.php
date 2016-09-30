@@ -22,31 +22,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<!-- Jquery UI -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.0/jquery-ui.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/js/select2.js"></script>
-	<script src="/assets/js/ajaxFileUpload.js"></script>
+	<script src="/assets/js/app.js"></script>
+
 
 	<!-- Bootstrap JS -->
 
 	<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<script>
-		$(document).ready(function(){ 
-			$('#adminCategorySelect').select2({
-				templateResult: function (data) {    
-    // We only really care if there is an element to pull classes from
-    if (!data.element) {
-    	return data.text;
-    }
 
-    var $element = $(data.element);
-
-    var $wrapper = $('<span></span>');
-    $wrapper.addClass($element[0].className);
-
-    $wrapper.text(data.text);
-
-    return $wrapper;
-  }
-});
-		});
+		 
 
 	</script>
 </head>

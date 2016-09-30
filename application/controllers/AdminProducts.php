@@ -15,36 +15,33 @@ class AdminProducts extends CI_Controller {
 
 	public function addProduct() {
 
-		$config['upload_path']          = './assets/img/products/';
-		$config['allowed_types']        = 'gif|jpg|png|jpeg';
-		$config['max_size']             = 100;
-		$config['max_width']            = 1024;
-		$config['max_height']           = 768;       
-		$this->load->library('upload', $config);
-		$this->upload->do_upload('userfile');
-		$productInfo = $this->input->post();
-		$productInfo['img'] = $this->upload->data('file_name');
-
-		var_dump($this->Product->addProduct($productInfo));
-
-		$productID=$this->db->insert_id();
-        $imageInfo = array("productID" => $productID, "src" => $this->upload->data('file_name'), "is_main" => 1);
-        $this->Product->addImage($imageInfo);
+		// $productInfo = $this->input->post();
+		// var_dump($productInfo);
+		// $this->Product->addProduct($productInfo);
+		// $productID = $this->db->insert_id();
+		$imageID = $this->input->post('image');
+		var_dump($imageID);
+        // $this->Product->linkImage($imageID, $productID);
+        // $this->Product->deleteTempImages();
 
 	}
 
 
 	public function displayAddEdit() {
 		if ($this->input->post('id') == 0) {
-			$this->load->view("partials/addEditProductModal", array("product" => "add", "categories" => $this->Product->getCategories()));
+			$this->load->view("partials/addEditProductModal", array("product" => "add", "categories" => $this->Product->getCategories(), "tempImages" => $this->Product->getDummyProductImages()));
 		} else {
-			$this->load->view("partials/addEditProductModal", array("product" => $this->Product->getItemDetails($this->input->post('id')),"categories" => $this->Product->getCategories()));
+			$this->load->view("partials/addEditProductModal", array("product" => $this->Product->getItemDetails($this->input->post('id')),"categories" => $this->Product->getCategories(), "tempImages" => array()));
 		}
 		
 	}
 
-	public function uploadImage() {
+	public function deleteImage($id, $refreshID) {
+		$this->Product->deleteImage($id);
+		$this->refresh($refreshID);
 
+	}
+	public function uploadImage() {
 		$config['upload_path']          = './assets/img/products/';
 		$config['allowed_types']        = 'gif|jpg|png|jpeg';
 		$config['max_size']             = 100;
@@ -52,8 +49,20 @@ class AdminProducts extends CI_Controller {
 		$config['max_height']           = 768;       
 		$this->load->library('upload', $config);
 		$this->upload->do_upload('userfile');
-		echo $this->upload->data('file_name');
-
+		$imageInfo = array("productID" => $this->input->post('productID'), "src" => $this->upload->data('file_name'));
+		$this->Product->addImage($imageInfo);
+		echo "<h2 class='bg-success'>You have successfully uploaded an image!</h2>";
+				
+	}
+	public function refresh($id) {
+		if ($id == 9999) {
+			$this->load->view("partials/uploadedImages", array("product" => "add", "tempImages" => $this->Product->getDummyProductImages()));
+		} else {
+			$this->load->view("partials/uploadedImages", array("product" => $this->Product->getItemDetails($id), "tempImages" => array()));
+		}
+	}
+	public function deleteProduct($id) {
+		$this->Product->deleteProduct($id);
 	}
 
 

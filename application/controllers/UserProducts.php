@@ -20,5 +20,19 @@ class UserProducts extends CI_Controller {
 		$data = array('categories' => $this->Product->getCategories(), 'products' => $this->Product->getProductsByCategory($id));
 		$this->load->view('store', $data);
 	}
+
+	public function updateDisplayByCategory($id) {
+		$this->load->model('Product');
+		if ($id) {
+			$this->load->view('partials/searchProductsView', array("products" => $this->Product->getProductsByCategoryA($id)));
+		} else {
+			$this->load->view('partials/searchProductsView', array("products" => $this->Product->getAll()));
+		}
+	}
+
+	public function paginate($id, $limit) {
+		$this->load->model('Product');
+		$this->load->view('partials/searchProductsview', $this->Product->paginateCategories($id, $limit));
+	}
 }
 
