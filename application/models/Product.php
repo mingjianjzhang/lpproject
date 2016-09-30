@@ -5,7 +5,7 @@ class Product extends CI_Model {
 	public function getAll() 
 	{
 
-		return $this->db->query("SELECT products.id, images.src AS img, products.name, inventory, SUM(quantity) as sold FROM products LEFT JOIN images ON products.id=images.product_id AND images.is_main = 1 LEFT JOIN orders_products ON products.id = orders_products.product_id WHERE products.id != 9999 GROUP BY products.id ")->result_array();
+		return $this->db->query("SELECT products.id, images.src AS img, products.name, inventory, SUM(quantity) as sold FROM products LEFT JOIN images ON products.id=images.product_id AND images.is_main = 1 LEFT JOIN orders_products ON products.id = orders_products.product_id WHERE products.id != 9999 GROUP BY products.id ORDER BY sold DESC")->result_array();
 
 	}
 	public function getInventory($data)
@@ -54,7 +54,7 @@ class Product extends CI_Model {
 	}
 	public function getCategories() {
 		$results = array();
-		$results = $this->db->query("select id, name as category_name FROM categories WHERE parent_id IS null")->result_array();
+		$results = $this->db->query("select id, name as category_name FROM categories WHERE parent_id = 0")->result_array();
 		for ($i = 0; $i < count($results); $i++) {
 			$results[$i]['children'] = $this->db->query("SELECT id, name FROM categories WHERE parent_id = {$results[$i]['id']}")->result_array();
 		}

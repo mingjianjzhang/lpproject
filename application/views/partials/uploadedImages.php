@@ -23,7 +23,7 @@
     })
 </script>
 	<table id="adminProductImageUpload" class="table">
-		<?php var_dump($tempImages) ?>
+
 		<?php 
 		if($product != "add") {
 			foreach ($product['images'] as $image) { ?>

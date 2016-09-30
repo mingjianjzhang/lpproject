@@ -48,7 +48,7 @@ $this->load->view("partials/adminNav");
 			</table>
 			<div class="row">
 				<div class="col-sm-5">
-					<p class="<?php if($info['status'] == 1) {
+					<p class="statusMessage <?php if($info['status'] == 1) {
 															echo 'bg-warning';
 														}
 														if($info['status'] == 2) {
@@ -73,6 +73,10 @@ $this->load->view("partials/adminNav");
 														if($info['status'] == 0) {
 															echo 'Cancelled';
 														} ?></p>
+				<form action="/AdminOrders/deleteOrder" method="post">
+					<input type="hidden" name="id" value="<?= $info['id'] ?>">
+					<button type="submit" class="btn btn-danger">Delete Order </button>
+				</form>
 				</div>
 				<div class="col-sm-5 pull-right">
 					<ul class="nav">

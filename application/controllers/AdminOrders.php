@@ -9,6 +9,8 @@ class AdminOrders extends CI_Controller {
 		$this->load->view('adminOrdersView', $data);
 	}
 
+
+
 	public function showOrder($orderID) {
 		$this->load->model('Order');
 		$info = $this->Order->getOrder($orderID);
@@ -19,6 +21,12 @@ class AdminOrders extends CI_Controller {
 
 	public function test() {
 		$this->load->view('upload');
+	}
+
+	public function deleteOrder() {
+		$this->load->model('Order');
+		$this->Order->deleteOrder($this->input->post('id'));
+		redirect("/AdminOrders");
 	}
 
 }

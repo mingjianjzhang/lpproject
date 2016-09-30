@@ -14,10 +14,10 @@
 				<td><?= $product['id']?></td>
 				<td><?= $product['name']?></td>
 				<td><?= $product['inventory']?></td>
-				<td><?= $product['sold'] ?></td>
+				<td><?= ($product['sold']) ? $product['sold'] : "None" ?></td>
 				<td>
-					<a class="addEdit" product-id="<?= $product['id'] ?>" data-toggle="modal" data-target="#editAddProductModal">Edit</a>
-					<a href="/deleteProduct/<?= $product['id'] ?>">Delete</a>
+					<a class="btn btn-info addEdit" product-id="<?= $product['id'] ?>" data-toggle="modal" data-target="#editAddProductModal">Edit</a>
+					<a class ="btn btn-danger" href="/deleteProduct/<?= $product['id'] ?>">Delete</a>
 				</td>
 			</tr>
 			<?php } ?>

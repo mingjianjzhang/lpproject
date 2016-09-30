@@ -50,7 +50,7 @@ $('#adminCategorySelect').select2({
 			</div>
 
 			<div class="modal-body">
-	<?php var_dump($product) ?>
+
 				<div id="submittedInfo"></div>
 					<!-- <form id="productInformation">	 -->
 					<form id="<?= ($product == "add") ? "addsProduct" : "editsProduct" ?>" method="POST">

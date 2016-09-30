@@ -6,12 +6,7 @@ $this->load->view('partials/userHeader');
 
 <div class="container">
 	<div class="col-md-3 col-md-offset-1 outlined">
-		<form class="navbar-form navbar-left">
-			<div class="form-group">
-				<input type="text" class="form-control" placeholder="Search">
-			</div>
-			<button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
-		</form>
+
 		<h3>Categories</h3>
 
 		<div id="MainMenu">

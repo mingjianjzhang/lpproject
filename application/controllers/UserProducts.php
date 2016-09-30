@@ -5,6 +5,7 @@ class UserProducts extends CI_Controller {
 
 	public function index() {
 		$this->load->model('Product');
+		// var_dump($this->Product->getCategories());
 		$data = array('categories' => $this->Product->getCategories(), 'products' => $this->Product->getAll());
 		$this->load->view('store', $data);
 	}
