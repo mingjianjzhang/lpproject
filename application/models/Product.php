@@ -10,10 +10,10 @@ class Product extends CI_Model {
 	}
 	public function getInventory($data)
 	{
-		$inCart = [];
-		foreach ($data as $cart) {
-			array_push($inCart, $cart['id']);
-		}
+		// $inCart = [];
+		// foreach ($data as $cart) {
+		// 	array_push($inCart, $cart['id']);
+		// }
 		return $this->db->query("SELECT id, inventory FROM products")->result_array(); // WHERE id IN ('$inCart') ???
 	}
 	public function getItemDetails($id)
