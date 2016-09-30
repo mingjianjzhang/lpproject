@@ -13,7 +13,7 @@ $this->load->view("partials/head");
 				<li><a href="/dashboard/products">Products</a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href="">Logout</a></li>
+				<li><a href="/">Logout of Admin</a></li>
 			</ul>
 		</div>
 	

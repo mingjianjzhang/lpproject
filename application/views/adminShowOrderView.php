@@ -6,16 +6,16 @@ $this->load->view("partials/adminNav");
 <div class="container">
 	<div class="row">
 		<div class="col-sm-3">
-			<p> Order ID: <?= $info['id'] ?> </p>
-			<h5> Customer Name </h5>
+			<h4> Order ID: <?= $info['id'] ?> </h4>
+			<h4> Customer Name: </h4>
 				<p><?= $info['first_name'] ?> <?= $info['last_name'] ?></p>
-			<h5> Customer Shipping Address </h5>
+			<h4> Customer Shipping Address: </h4>
 		
 			<ul class="nav">
 				<li><?= $info['shipping_address']?></li>
 
 			</ul>
-			<h5> Customer Billing Info </h5>
+			<h4> Customer Billing Info: </h4>
 			<ul class="nav">
 				<li>Address</li>
 				<li><?= $info['billing_address'] ?></li>

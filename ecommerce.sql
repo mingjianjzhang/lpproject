@@ -1,8 +1,10 @@
+CREATE DATABASE  IF NOT EXISTS `ecommerce` /*!40100 DEFAULT CHARACTER SET latin1 */;
+USE `ecommerce`;
 -- MySQL dump 10.13  Distrib 5.7.12, for osx10.9 (x86_64)
 --
--- Host: 127.0.0.1    Database: ecommerce
+-- Host: localhost    Database: ecommerce
 -- ------------------------------------------------------
--- Server version	5.6.28
+-- Server version	5.5.42
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -109,7 +111,7 @@ CREATE TABLE `images` (
   `updated_at` datetime DEFAULT NULL,
   `is_main` tinyint(4) DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -118,7 +120,7 @@ CREATE TABLE `images` (
 
 LOCK TABLES `images` WRITE;
 /*!40000 ALTER TABLE `images` DISABLE KEYS */;
-INSERT INTO `images` VALUES (1,1,'algorithm1.jpg','0000-00-00 00:00:00','0000-00-00 00:00:00',1),(2,2,'andy1.jpg','0000-00-00 00:00:00','0000-00-00 00:00:00',1),(3,3,'ballchair1.jpg','0000-00-00 00:00:00','0000-00-00 00:00:00',1),(4,4,'basketball1.jpg','0000-00-00 00:00:00','0000-00-00 00:00:00',1),(5,5,'bluechair1.jpg',NULL,NULL,1),(6,6,'bluecouch1.jpg',NULL,NULL,1),(7,7,'bookshelf1.jpg',NULL,NULL,1),(8,8,'bookshelfsmall1.jpg',NULL,NULL,1),(9,9,'chair1.jpg',NULL,NULL,1),(10,10,'computerstand1.jpg',NULL,NULL,1),(11,11,'fruit1.jpg',NULL,NULL,1),(12,12,'markers1.jpg',NULL,NULL,1),(13,13,'microwave1.jpg',NULL,NULL,1),(14,14,'pingpong1.jpg',NULL,NULL,1),(15,15,'projector1.jpg',NULL,NULL,1),(16,16,'refrigerator1.jpg',NULL,NULL,1),(17,17,'refrigerator2.jpg',NULL,NULL,1),(18,18,'chrisb.jpeg',NULL,NULL,1),(19,19,'blackbelt.jpg',NULL,NULL,1);
+INSERT INTO `images` VALUES (1,1,'algorithm1.jpg','0000-00-00 00:00:00','0000-00-00 00:00:00',1),(2,2,'andy1.jpg','0000-00-00 00:00:00','0000-00-00 00:00:00',1),(3,3,'ballchair1.jpg','0000-00-00 00:00:00','0000-00-00 00:00:00',1),(4,4,'basketball1.jpg','0000-00-00 00:00:00','0000-00-00 00:00:00',1),(5,5,'bluechair1.jpg',NULL,NULL,1),(6,6,'bluecouch1.jpg',NULL,NULL,1),(7,7,'bookshelf1.jpg',NULL,NULL,1),(8,8,'bookshelfsmall1.jpg',NULL,NULL,1),(9,9,'chair1.jpg',NULL,NULL,1),(10,10,'computerstand1.jpg',NULL,NULL,1),(11,11,'fruit1.jpg',NULL,NULL,1),(12,12,'markers1.jpg',NULL,NULL,1),(13,13,'microwave1.jpg',NULL,NULL,1),(14,14,'pingpong1.jpg',NULL,NULL,1),(15,15,'projector1.jpg',NULL,NULL,1),(16,16,'refrigerator1.jpg',NULL,NULL,1),(17,17,'refrigerator2.jpg',NULL,NULL,1),(18,18,'chrisb.jpeg',NULL,NULL,1),(19,19,'blackbelt.jpg',NULL,NULL,1),(20,20,'cheez-it1.jpg','0000-00-00 00:00:00','0000-00-00 00:00:00',1),(22,22,'sunChips1.jpg','0000-00-00 00:00:00','0000-00-00 00:00:00',1),(23,23,'fruit-snacks.jpg','0000-00-00 00:00:00','0000-00-00 00:00:00',1),(24,24,'trail-mix.jpg','0000-00-00 00:00:00','0000-00-00 00:00:00',1),(25,25,'candy1.jpg','0000-00-00 00:00:00','0000-00-00 00:00:00',1),(26,26,'popcorn1.jpg','0000-00-00 00:00:00','0000-00-00 00:00:00',1);
 /*!40000 ALTER TABLE `images` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -190,7 +192,7 @@ CREATE TABLE `products` (
   `is_personal` tinyint(4) DEFAULT NULL,
   `category_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -199,7 +201,7 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES (1,'algorithm',4.99,60,'A great book to really show you how much you don\'t know or understand!',1,8),(2,'andy',99.99,1,'All of Andy\'s great personal products',1,12),(3,'ballchair',59.99,1,'A ball to sit on',1,8),(4,'basketball',9.99,2,'Play some hoops while you wait for your coworkers to push up to Github!',1,8),(5,'bluechair',49.99,5,'Feeling blue? This is where you can sit',0,7),(6,'bluecouch',199.99,2,'Great for taking some naps',0,7),(7,'bookshelf',49.99,5,'Store your stuff here',0,7),(8,'bookshelfsmall',39.99,6,'Mini version for little things',0,7),(9,'chair',99.99,70,'A basic chair covered in \"leather\"',0,7),(10,'computerstand',59.99,10,'Move around like a boss!',0,5),(11,'fruit',9.99,8,'Get some vitamin C',0,10),(12,'markers',7.99,30,'\'Cuz you\'re always running dry',0,7),(13,'microwave',99.99,3,'Heat up your lunch, or your dinner, and even your breakfast',0,2),(14,'pingpong',199.99,10,'Take a break from coding and bother other people with the bouncy ball',0,8),(15,'projector',299.99,10,'When you are cold, turn these on to generate some heat',0,6),(16,'whitefridge',599.99,3,'A fridge for communal sharing of leftovers',0,11),(17,'blackfridge',599.99,3,'Fridge for personal food, don\'t take OPP while others are looking',0,11),(18,'chris',999.99,1,'Recently reduced and at a bargain price!',0,13),(19,'blackbelt',3.33,99,'Didn\'t get your black belt? Don\'t worry, we\'ve got you covered here!',1,13);
+INSERT INTO `products` VALUES (1,'Algorithm',4.99,60,'A great book to really show you how much you don\'t know or understand!',1,8),(2,'Andy',99.99,1,'All of Andy\'s great personal products',1,12),(3,'Ball Chair',59.99,1,'A ball to sit on',1,8),(4,'Basketball Hoop',9.99,2,'Play some hoops while you wait for your coworkers to push up to Github!',1,8),(5,'Blue Chair',49.99,5,'Feeling blue? This is where you can sit',0,7),(6,'Blue Couch',199.99,2,'Great for taking some naps',0,7),(7,'Bookshelf',49.99,5,'Store your stuff here',0,7),(8,'Bookshelf small',39.99,6,'Mini version for little things',0,7),(9,'Chair',99.99,70,'A basic chair covered in \"leather\"',0,7),(10,'Computer Stand',59.99,10,'Move around like a boss!',0,5),(11,'Fruit',9.99,8,'Get some vitamin C',0,10),(12,'Markers',7.99,30,'\'Cuz you\'re always running dry',0,7),(13,'Microwave',99.99,3,'Heat up your lunch, or your dinner, and even your breakfast',0,2),(14,'Ping Pong',199.99,10,'Take a break from coding and bother other people with the bouncy ball',0,8),(15,'Projector',299.99,10,'When you are cold, turn these on to generate some heat',0,6),(16,'White Fridge',599.99,3,'A fridge for communal sharing of leftovers',0,11),(17,'Black Fridge',599.99,3,'Fridge for personal food, don\'t take OPP while others are looking',0,11),(18,'Chris Burns',999.99,1,'Recently reduced and at a bargain price!',0,13),(19,'Black Belt',3.33,99,'Didn\'t get your black belt? Don\'t worry, we\'ve got you covered here!',1,13),(20,'Cheez-Its',1.50,50,'Cheese Snack',1,9),(22,'Sun Chips',1.50,50,'single serving sun chips for eating in the dark.',0,9),(23,'Fruit Snacks',1.50,50,'Single serving fruit snack. Not real fruit but close enough.',0,9),(24,'Trail Mix',5.43,5,'Trail mix for health. Or M&M\'s with obstacle course.',0,9),(25,'Candy',0.50,250,'Candy by the piece.',0,9),(26,'Popcorn',0.75,100,'Single pack of microwavable popcorn. Also air freshener to make everyone hungry.',0,9);
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -242,4 +244,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-09-29 15:00:36
+-- Dump completed on 2016-09-30  9:17:50

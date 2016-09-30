@@ -11,8 +11,10 @@ $this->load->view('partials/userHeader');
 			<p class="white">We have all you need to start your very own coding bootcamp.</p>
 			<p><a class="btn btn-default btn-lg" href="store" role="button">Shop All Products</a></p>
 		</div>
+		<div class="col-md-12">
+			<h3>Shop by Category:</h3>
+		</div>
 		<div class="row">
-			<h3>Or shop a category:</h3>
 			<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
 				<div class="hovereffect">
 					<img class="thumbnail dropshadow" src="/assets/img/electronics-cat.jpg" height="240" alt="category image">
@@ -45,7 +47,7 @@ $this->load->view('partials/userHeader');
 					<img class="thumbnail dropshadow" src="/assets/img/instructors-cat.jpg" height="240" alt="category image">
 					<div class="overlay">
 					    <h2>< Instructors /></h2>
-						<a href="/UserProducts/displayProductsByCategory/4">Shop Now</a>
+						<a class="info" href="/UserProducts/displayProductsByCategory/4">Shop Now</a>
 					</div>
 				</div>
 			</div>
