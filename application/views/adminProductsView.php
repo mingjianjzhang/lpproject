@@ -62,7 +62,6 @@ $this->load->view("partials/adminNav");
 			$('.modal-content').html(res);
 		});
 	})
-	
 
 </script>
 	<div class="modal fade" id="editAddProductModal" role="dialog">
@@ -72,14 +71,4 @@ $this->load->view("partials/adminNav");
 		</div>
 	</div>
 	</div>
-</div> //container
-
-
-
-
-
-
-
-
-
-
+</div> <!-- container -->
