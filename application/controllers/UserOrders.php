@@ -44,7 +44,6 @@ class UserOrders extends CI_Controller {
 		$this->load->model('Order');
 		$post = $this->input->post();
 		$this->Order->processOrder($post);
-
 	}
 
 }
