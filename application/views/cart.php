@@ -9,7 +9,7 @@ $this->load->view('partials/userHeader');
 		$(document).ready(function(){
 			$('#pay').click(function(){
 				$.post('/empty', function(res) {
-					$('#success').html('<h2>Thanks for your order!</h2>');
+					$('#success').html('<h2>Thanks for your order!</h2><a href="/store"><button href="/store" class="btn btn-success">Continue Shopping</button></a>');
 				});
 				return false;
 			});
@@ -57,8 +57,8 @@ $this->load->view('partials/userHeader');
 				<h4 class="pull-right">Total: <?= $cash ?></h4>	
 				<a href="/empty"><button class="btn btn-danger">Empty Cart</button></a>
 				<?php }?>
-			</div>
-			<a href="/store"><button class="btn btn-success">Continue Shopping</button></a>
+			<a href="/store"><button href="/store" class="btn btn-success">Continue Shopping</button></a>
+			</div>	
 		</div>
 		<div class="col-md-5 col-md-offset-1">
 			<h1>Shipping Information</h1>
